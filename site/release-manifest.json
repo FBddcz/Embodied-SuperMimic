@@ -8,8 +8,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 22464,
-      "sha256": "522f9658d9857d71df98109ae85a09dbc9cb26d1599b32bcb92f678c22523927"
+      "bytes": 22463,
+      "sha256": "cfa8433c8461f5515180333b0c408fab5900d2b0a0406d60f8ae41aa4ba711fe"
     },
     {
       "path": "static/css/gallery.css",
@@ -176,8 +176,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8754,
-      "sha256": "d5e4fe18e350ec28e6891ed31b5b9c82a328fa3ab28fbbd068f4af36f331911d"
+      "bytes": 8753,
+      "sha256": "007ba7f0289a781c94f858540af23f42dd555709a499621cf629cad8a6cbe6a5"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -293,7 +293,7 @@
   "inventory": {
     "public_file_count_including_manifest": 58,
     "hashed_file_count": 57,
-    "hashed_file_bytes_excluding_manifest": 6513503,
+    "hashed_file_bytes_excluding_manifest": 6513501,
     "media_file_count": 31,
     "video_file_count": 11,
     "image_file_count": 20,

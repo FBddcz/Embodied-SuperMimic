@@ -93,7 +93,7 @@ node --check site/static/js/gallery.js
 | UR5e | 62.5% | 68.75% | 69.92% | 1 |
 | xArm7 | 46.5% | 51.95% | 57.81% | 1 |
 
-> **历史四类混合起点评测**（`legacy_reset_v0`，256 集/检查点），非 HOME 全流程分数。预算和训练 seed 分列；教师与 BC 成本另计。新 HOME 协议尚无正式分数，完整设置见 [实验说明](docs/EXPERIMENTS.md)。
+> **历史四类混合起点评测**（`legacy_reset_v0`，256 集/检查点），非 HOME 全流程分数。预算和训练 seed 分列；教师与 BC 成本另计。<span id="home-live-status"><code>home_fulltask_v1</code> 开发诊断进行中，尚无正式 HOME 分数。</span>，完整设置见 [实验说明](docs/EXPERIMENTS.md)。
 
 UR5e / xArm7：初步诊断显示，旧版随机起姿设置影响了表现；后续将采用验证后的安全 HOME 重训，完成后更新成绩。
 

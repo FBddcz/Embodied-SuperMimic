@@ -1,5 +1,5 @@
 {
-  "release": "research-preview-2026-11-04-reader1",
+  "release": "research-preview-2026-11-04-original-hero5",
   "assets": [
     {
       "path": ".nojekyll",
@@ -8,18 +8,18 @@
     },
     {
       "path": "index.html",
-      "bytes": 17825,
-      "sha256": "4577f19054ca2f3e8809e9b27bae6bf2c2ad03997efe10c003e3eb97bbd1b722"
+      "bytes": 25748,
+      "sha256": "8491f38e8a99b8c24c232c59cefc1346aca06172b038753538819bb2d3542111"
     },
     {
       "path": "static/css/gallery.css",
-      "bytes": 5280,
-      "sha256": "bd0e4ae59537929da7612a971b0de8469ee0acb248517143de4dfd9e757aeda9"
+      "bytes": 6346,
+      "sha256": "1b4cca531993ddb8a22d86d45f1d73a3374bd7003438492dc633615ecbe44976"
     },
     {
       "path": "static/css/index.css",
-      "bytes": 9148,
-      "sha256": "2a345ed0e72a8e6d88b833419b67820dabe97b4518d5bee144b71cf88a69f25c"
+      "bytes": 28342,
+      "sha256": "3ac4f2704a0433f0c50123f6acf728b28f40d7ee7e3f5b1807b50c171289d17f"
     },
     {
       "path": "static/img/piper/piper_matrix.png",
@@ -38,8 +38,8 @@
     },
     {
       "path": "static/js/gallery.js",
-      "bytes": 12567,
-      "sha256": "471deea77091dbe8e8ea2a78e07df4300e816d63725eeeb6cb1d1fdf2d08776b"
+      "bytes": 9933,
+      "sha256": "d916001cfae9511447ba88ae422ea73cc528cd28463be80a4df2966eb13c6c35"
     },
     {
       "path": "static/videos/hero_robots.mp4",
@@ -176,13 +176,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 8221,
-      "sha256": "f00f986093494374b1416a29b382c706f20fa40fc40ae11bcf770f4c266dbb99"
+      "bytes": 8526,
+      "sha256": "21b50bd371a2f574ee1a3f694cb14838bdf0fbb6719a2de7f1bec6d15738f90a"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 5305,
-      "sha256": "1e55aa1aed9607342c3cdcb2c90653ab4badecdd5bd2c1c6774c1766c2cb7e10"
+      "bytes": 5571,
+      "sha256": "bb8410906ea371fd253dba7e8acf41e288b99360f014ea2839ad5bc3da6fa0e9"
     },
     {
       "path": "docs/EXPERIMENTS.md",
@@ -196,8 +196,8 @@
     },
     {
       "path": "docs/RELEASE_STATUS.md",
-      "bytes": 4631,
-      "sha256": "32b1ea76bb8775dbd6a76e6f865c4d6a68ec70674debfc1e62de50cf0e12ac4c"
+      "bytes": 4873,
+      "sha256": "93f33a55a6f1f0a855d7f17ab0b865790c95ce3b6b5d49a6db127e62046b5ae8"
     },
     {
       "path": "docs/REPRODUCIBILITY.md",
@@ -246,8 +246,8 @@
     },
     {
       "path": "scripts/check_site.py",
-      "bytes": 10172,
-      "sha256": "c3374a0ddede749bd32cdd266477fdd2b94bbe4c6c651b35b61436b2dd3a7ad6"
+      "bytes": 11180,
+      "sha256": "0cc6e32f8f06b85e94f030b39419e3048b12d50eadb6b3b8e6c2827e39de6922"
     },
     {
       "path": "scripts/serve.py",
@@ -260,13 +260,13 @@
       "sha256": "b4953f3f1e41623ba5891ec31b407486a20971fcfc874d7ab84909fbacf6e13b"
     }
   ],
-  "hash_scope": "All public files except this manifest; asset paths relative to site, public_metadata paths relative to repository root. Archived evaluation hashes are identifiers, not reverified raw files.",
+  "hash_scope": "All public files except this manifest; assets relative to site, public_metadata and readme_media relative to repository root. README GIF source hashes identify unchanged approved MP4s.",
   "protocol_status": {
     "numeric_results": "legacy_reset_v0",
     "home_fulltask_v1": "approved_implementation_in_progress_not_frozen_no_new_scores",
     "home_jitter_v1": "planned_no_scores"
   },
-  "publication_status": "deployed_baseline_verified_local_redesign_not_yet_published",
+  "publication_status": "deployed_prior_snapshot_restoration_pending_publication",
   "media_scope": "Existing project-generated noncommercial simulation illustrations; not redistributed reference-project videos or raw models. Third-party rights are not relicensed under MIT; see THIRD_PARTY_NOTICES.md.",
   "media_timing": {
     "legacy_montages": [
@@ -291,13 +291,14 @@
     "start_scope": "Selected legacy episodes; no new HOME footage; retained approach does not establish ungrasped type-0 start."
   },
   "inventory": {
-    "public_file_count_including_manifest": 52,
-    "hashed_file_count": 51,
-    "hashed_file_bytes_excluding_manifest": 4325994,
-    "media_file_count": 25,
+    "public_file_count_including_manifest": 58,
+    "hashed_file_count": 57,
+    "hashed_file_bytes_excluding_manifest": 6183645,
+    "media_file_count": 31,
     "video_file_count": 11,
-    "image_file_count": 14,
-    "media_bytes": 4176320
+    "image_file_count": 20,
+    "animated_gif_count": 6,
+    "media_bytes": 6006601
   },
   "verified_deployment_snapshot": {
     "commit": "243bb861ee76caf0695fc070b6572fb19a3a2389",
@@ -310,7 +311,7 @@
       "HTTP Range 206"
     ],
     "browser_interaction": "not_verified",
-    "current_local_redesign": "requires_separate_publish_and_verification"
+    "current_local_update": "Prior reader-first site redesign superseded; original-layout restoration with five-arm hero and README GIFs pending publication verification."
   },
   "external_resources": [
     {
@@ -328,6 +329,141 @@
       "url": "https://img.shields.io/badge/LIVE_DEMO-打开实验展示-1f5bc4?style=for-the-badge",
       "purpose": "Live Demo navigation badge",
       "hash_scope": "External service image; excluded from local hashes and inventory"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Nunito+Sans:wght@400;600;700;800&display=swap",
+      "purpose": "Original website fonts restored",
+      "hash_scope": "External resource; not a bundled font"
+    }
+  ],
+  "layout_reference": {
+    "original_index_sha256": "3a4511ce22322692d300848b67ee7cbb5f43dcbb67d98467a3d5d4b9858440fd",
+    "scope": "Original English website restored; five-arm hero addition and factual labels only; README retains reader-first presentation"
+  },
+  "readme_media": [
+    {
+      "path": "docs/media/arx5-teacher.gif",
+      "bytes": 49645,
+      "sha256": "95e3ec57de48c6bb3bd92b9ede8a5394bc923f2d68dc7914bc3ef5e2652df339",
+      "sources": [
+        {
+          "path": "site/static/videos/rollouts/arx5/mug_hang/teacher.mp4",
+          "sha256": "c8f2f97c85cdbe993f138847b5d7325ed19196ffc287ccb022eb0df5cb7103f3"
+        }
+      ],
+      "encoding": {
+        "fps": 10,
+        "loop": 0,
+        "forward_only": true,
+        "palette": "128 colors, palettegen/paletteuse",
+        "scope": "complete short source clip; duration quantized to 10 fps"
+      }
+    },
+    {
+      "path": "docs/media/five-arms.gif",
+      "bytes": 326872,
+      "sha256": "fec4cd76a988bd672b4548cfb60dea5d339377794d3802c1c59689c6e3a34a2b",
+      "sources": [
+        {
+          "path": "site/static/videos/rollouts/panda/mug_hang/panda_mug_v7_final.mp4",
+          "sha256": "f83dae8cea1ddb01ceea5cfaa321d722c44b51ac2a6c6422252d8d96dc7eaa39"
+        },
+        {
+          "path": "site/static/videos/rollouts/arx5/mug_hang/teacher.mp4",
+          "sha256": "c8f2f97c85cdbe993f138847b5d7325ed19196ffc287ccb022eb0df5cb7103f3"
+        },
+        {
+          "path": "site/static/videos/rollouts/piper/mug_hang/verified_20261104/teacher_hud.mp4",
+          "sha256": "ee854830ad0d7bfa9a3198bb26a2c12eb2ad53e25597b9c6a631c0f72377c946"
+        },
+        {
+          "path": "site/static/videos/rollouts/ur5e/mug_hang/verified_20261104/teacher_hud.mp4",
+          "sha256": "d8d724f5ff3ef89c6a5b73b4d881c412bb893702f69b77ad28ea92b37f5277f2"
+        },
+        {
+          "path": "site/static/videos/rollouts/xarm7/mug_hang/verified_20261104/teacher_hud.mp4",
+          "sha256": "21ccc8385d50dbdd05c48944ce12f9b40d857d40f66801608f481d179da36c52"
+        }
+      ],
+      "encoding": {
+        "fps": 10,
+        "loop": 0,
+        "forward_only": true,
+        "palette": "128 colors, palettegen/paletteuse",
+        "scope": "six-second independent-loop montage"
+      }
+    },
+    {
+      "path": "docs/media/panda-dyna.gif",
+      "bytes": 211817,
+      "sha256": "977f4743c3fcd3d78633966054da882b194d776528daaff0888fccfbe3ccc07a",
+      "sources": [
+        {
+          "path": "site/static/videos/rollouts/panda/mug_hang/panda_mug_v7_final.mp4",
+          "sha256": "f83dae8cea1ddb01ceea5cfaa321d722c44b51ac2a6c6422252d8d96dc7eaa39"
+        }
+      ],
+      "encoding": {
+        "fps": 10,
+        "loop": 0,
+        "forward_only": true,
+        "palette": "128 colors, palettegen/paletteuse",
+        "scope": "complete short source clip; duration quantized to 10 fps"
+      }
+    },
+    {
+      "path": "docs/media/piper-teacher.gif",
+      "bytes": 275649,
+      "sha256": "24bed1462e8ff4196681d4f7fcbbb58165b5f178f8a85079a1b553737d714be4",
+      "sources": [
+        {
+          "path": "site/static/videos/rollouts/piper/mug_hang/verified_20261104/teacher_hud.mp4",
+          "sha256": "ee854830ad0d7bfa9a3198bb26a2c12eb2ad53e25597b9c6a631c0f72377c946"
+        }
+      ],
+      "encoding": {
+        "fps": 10,
+        "loop": 0,
+        "forward_only": true,
+        "palette": "128 colors, palettegen/paletteuse",
+        "scope": "complete short source clip; duration quantized to 10 fps"
+      }
+    },
+    {
+      "path": "docs/media/ur5e-teacher.gif",
+      "bytes": 560875,
+      "sha256": "20051b7af09846b2e8b9bee16128212415bfef89b2511121834e9c005c827303",
+      "sources": [
+        {
+          "path": "site/static/videos/rollouts/ur5e/mug_hang/verified_20261104/teacher_hud.mp4",
+          "sha256": "d8d724f5ff3ef89c6a5b73b4d881c412bb893702f69b77ad28ea92b37f5277f2"
+        }
+      ],
+      "encoding": {
+        "fps": 10,
+        "loop": 0,
+        "forward_only": true,
+        "palette": "128 colors, palettegen/paletteuse",
+        "scope": "complete short source clip; duration quantized to 10 fps"
+      }
+    },
+    {
+      "path": "docs/media/xarm7-teacher.gif",
+      "bytes": 405423,
+      "sha256": "42887919098286c78e26a35fe0154e0ba67c0d7284204ce0c91b1215f92a92cd",
+      "sources": [
+        {
+          "path": "site/static/videos/rollouts/xarm7/mug_hang/verified_20261104/teacher_hud.mp4",
+          "sha256": "21ccc8385d50dbdd05c48944ce12f9b40d857d40f66801608f481d179da36c52"
+        }
+      ],
+      "encoding": {
+        "fps": 10,
+        "loop": 0,
+        "forward_only": true,
+        "palette": "128 colors, palettegen/paletteuse",
+        "scope": "complete short source clip; duration quantized to 10 fps"
+      }
     }
   ]
 }

@@ -21,6 +21,9 @@ PUBLIC_METADATA = {
     'results/mainline.json', 'scripts/check_site.py', 'scripts/serve.py',
     'scripts/test_preview.py',
 }
+README_MEDIA = {'docs/media/' + name for name in (
+    'five-arms.gif', 'panda-dyna.gif', 'arx5-teacher.gif',
+    'piper-teacher.gif', 'ur5e-teacher.gif', 'xarm7-teacher.gif')}
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link',
         'meta', 'param', 'source', 'track', 'wbr'}
 
@@ -150,7 +153,8 @@ def main():
     manifest = json.loads((SITE / 'release-manifest.json').read_text(encoding='utf-8'))
     verify_manifest(manifest['assets'], SITE, site_files)
     verify_manifest(manifest['public_metadata'], ROOT, PUBLIC_METADATA)
-    expected = PUBLIC_METADATA | {'site/' + n for n in site_files} | {'site/release-manifest.json'}
+    verify_manifest(manifest['readme_media'], ROOT, README_MEDIA)
+    expected = PUBLIC_METADATA | README_MEDIA | {'site/' + n for n in site_files} | {'site/release-manifest.json'}
     actual = set()
     patterns = [
         r'/(?:Users|user|home)/[A-Za-z0-9_]', r'\bdevspace-\d+',
@@ -182,8 +186,20 @@ def main():
                     local_file(target, path.parent, ROOT)
     if actual != expected:
         raise ValueError('Missing public files: ' + str(sorted(expected - actual)))
+    for name in README_MEDIA:
+        data = (ROOT / name).read_bytes()
+        if len(data) >= 4 * 1024 * 1024 or not data.startswith(b'GIF89a'):
+            raise ValueError('README GIF exceeds size/format limit: ' + name)
+        if b'NETSCAPE2.0' + bytes([3, 1, 0, 0, 0]) not in data:
+            raise ValueError('README GIF does not loop continuously: ' + name)
+    readme = (ROOT / 'README.md').read_text(encoding='utf-8')
+    for name in README_MEDIA:
+        if name not in readme:
+            raise ValueError('Unreferenced README media: ' + name)
+    for target in re.findall(r'(?:src|href)="([^"<>]+)"', readme):
+        local_file(target, ROOT, ROOT)
     check_results()
-    media = [ROOT / name for name in expected if Path(name).suffix in {'.mp4', '.jpg', '.png'}]
+    media = [ROOT / name for name in expected if Path(name).suffix in {'.mp4', '.jpg', '.png', '.gif'}]
     inventory = {
         'public_file_count_including_manifest': len(actual),
         'hashed_file_count': len(actual) - 1,
@@ -192,7 +208,8 @@ def main():
             if name != 'site/release-manifest.json'),
         'media_file_count': len(media),
         'video_file_count': sum(p.suffix == '.mp4' for p in media),
-        'image_file_count': sum(p.suffix in {'.jpg', '.png'} for p in media),
+        'image_file_count': sum(p.suffix in {'.jpg', '.png', '.gif'} for p in media),
+        'animated_gif_count': sum(p.suffix == '.gif' for p in media),
         'media_bytes': sum(p.stat().st_size for p in media),
     }
     if manifest['inventory'] != inventory:

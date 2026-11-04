@@ -2,7 +2,7 @@
 
 Snapshot: November 4, 2026. **Website-only research preview, deployed to GitHub Pages.** The publisher verified the public repository and deployment of commit `243bb861ee76caf0695fc070b6572fb19a3a2389` at https://fbddcz.github.io/Embodied-SuperMimic/ : HTTPS index, CSS/JS, the three long-video hashes and HTTP Range 206. Browser interaction and mobile layout were not verified because the preview safety classifier was unavailable.
 
-The reader-first Chinese README/site redesign is a subsequent local update; its publication must be verified separately. It retains the same experimental results and local media. No project paper or full algorithm package is published.
+The prior reader-first website redesign is superseded. This restoration preserves the established English layout, fonts, title, buttons and gallery, adding only a five-arm hero strip and factual labels. The Chinese README retains its reader-first structure and adds looping GIF derivatives. This local restoration requires its own publication verification; experimental result values and original media are unchanged. No project paper or full algorithm package is published.
 
 ## Protocol migration
 
@@ -33,4 +33,4 @@ Original third-party notices are preserved. ShapeNet mug provenance and publishe
 4. Publish approved contents to the created public repository and configure Pages only after review. The workflow deploys **only `site/`**, on `main`; local uncommitted edits do not deploy.
 5. Verify the actual HTTPS page, project subpath, CSS/JS, all gallery media, seeking/Range and mobile layout. Record the real commit, URL and deployment outcome after success; a planned URL is not an acceptance result.
 
-The local redesign does not itself commit, push or deploy any update. Browser checks, if run, are local preview checks, not proof of GitHub Pages deployment. A future algorithm/model/data release has separate provenance and reproducibility gates in [REPRODUCIBILITY.md](REPRODUCIBILITY.md).
+The local restoration does not itself commit, push or deploy any update. Browser checks, if run, are local preview checks, not proof of GitHub Pages deployment. A future algorithm/model/data release has separate provenance and reproducibility gates in [REPRODUCIBILITY.md](REPRODUCIBILITY.md).

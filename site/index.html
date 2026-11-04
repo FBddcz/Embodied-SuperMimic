@@ -1,167 +1,375 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Embodied-SuperMimic · 机械臂世界模型实验</title>
-  <meta name="description" content="打开就能看的机械臂仿真实验：切换 Panda、ARX5、PiPER、UR5e 与 xArm7，观看 Teacher / BC / Dyna 录像，查阅结果与复现说明。历史混合复位结果与新 HOME 协议分开报告。">
-  <meta property="og:title" content="Embodied-SuperMimic · 看机械臂如何学习">
-  <meta property="og:description" content="真实仿真录像、在线世界模型研究、清楚的结果与复现入口。网站 research preview；新 HOME 协议暂无正式分数。">
+  <title>Embodied-SuperMimic</title>
+  <meta name="description" content="Independent experiments in online differentiable world models for manipulation. Five robot arms, measured task results, recorded rollouts, and a five-task research roadmap.">
+  <meta name="keywords" content="SuperMimic, differentiable world model, robot manipulation, mjlab, MuJoCo, BPTT">
+  <meta property="og:title" content="Embodied-SuperMimic">
+  <meta property="og:description" content="Measured single-task results across five simulated arms; full multi-task validation is in progress.">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <link rel="stylesheet" href="static/css/index.css?v=20261104-reader1">
-  <link rel="stylesheet" href="static/css/gallery.css?v=20261104-reader1">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/index.css?v=20261104-r5-hero5">
+  <link rel="stylesheet" href="static/css/gallery.css?v=20261104-r5">
 </head>
 <body>
-<a class="skip-link" href="#main">跳到主要内容</a>
-<header class="site-header">
-  <div class="wrap header-row">
-    <a class="brand" href="#top" aria-label="Embodied-SuperMimic 首页">🦾 <span>Embodied-SuperMimic</span></a>
-    <nav aria-label="主导航">
-      <a href="#gallery">看演示</a><a href="#use">如何使用</a><a href="#results">实验结果</a><a href="#docs">文档</a>
-      <a href="https://github.com/FBddcz/Embodied-SuperMimic">GitHub</a>
-    </nav>
+
+<header class="hero hero-light">
+  <!-- HERO BACKGROUND SWAP: two-line change.
+       Option A (current, twilight sky):  <header class="hero">        src=sky_loop.mp4        poster=sky_loop_poster.jpg
+       Option B (robots on white):        <header class="hero hero-light">  src=hero_robots.mp4   poster=hero_robots_poster.jpg
+       The hero-light class flips text/scrim colours for white footage. -->
+  <video class="hero-video" autoplay muted loop playsinline poster="static/videos/hero_robots_poster.jpg">
+    <source src="static/videos/hero_robots.mp4" type="video/mp4">
+  </video>
+  <div class="sky-stars"></div>
+  <div class="sky-clouds"></div>
+  <div class="sky-glow"></div>
+  <div class="container">
+    <h1>Embodied-SuperMimic</h1>
+    <p class="subtitle">Online world-model learning for robot manipulation</p>
+    <div class="authors">An independent research project maintained by <a href="https://github.com/FBddcz">FBddcz</a></div>
+    <div class="affiliations">Research preview · Updated November 4, 2026 · Simulation only</div>
+
+    <div class="links">
+      <span class="button disabled" title="No paper is published for this project yet">Paper · Coming soon</span>
+      <a class="button secondary" href="https://github.com/FBddcz/Embodied-SuperMimic">Website source</a>
+      <a class="button secondary" href="#film">🎬 Watch the film</a>
+      <a class="button secondary" href="#credits">Sources &amp; release status</a>
+    </div>
+  </div>
+  <!-- Five-arm showcase: additive; original hero and page layout retained. -->
+  <div class="container-wide hero-five-wrap">
+    <div class="hero-five-strip" aria-label="Five simulated robot arms">
+      <figure class="hero-arm"><video autoplay muted loop playsinline preload="metadata" poster="static/videos/rollouts/panda/mug_hang/panda_mug_v7_final.jpg" aria-label="Panda Dyna selected simulation highlight"><source src="static/videos/rollouts/panda/mug_hang/panda_mug_v7_final.mp4" type="video/mp4"></video><figcaption><strong>Panda</strong><span>Dyna</span></figcaption></figure>
+      <figure class="hero-arm"><video autoplay muted loop playsinline preload="metadata" poster="static/videos/rollouts/arx5/mug_hang/teacher.jpg" aria-label="ARX5 Teacher selected simulation highlight"><source src="static/videos/rollouts/arx5/mug_hang/teacher.mp4" type="video/mp4"></video><figcaption><strong>ARX5</strong><span>Teacher</span></figcaption></figure>
+      <figure class="hero-arm"><video autoplay muted loop playsinline preload="metadata" poster="static/videos/rollouts/piper/mug_hang/verified_20261104/teacher_hud.jpg" aria-label="PiPER Teacher selected simulation highlight"><source src="static/videos/rollouts/piper/mug_hang/verified_20261104/teacher_hud.mp4" type="video/mp4"></video><figcaption><strong>PiPER</strong><span>Teacher</span></figcaption></figure>
+      <figure class="hero-arm"><video autoplay muted loop playsinline preload="metadata" poster="static/videos/rollouts/ur5e/mug_hang/verified_20261104/teacher_hud.jpg" aria-label="UR5e Teacher selected simulation highlight"><source src="static/videos/rollouts/ur5e/mug_hang/verified_20261104/teacher_hud.mp4" type="video/mp4"></video><figcaption><strong>UR5e</strong><span>Teacher</span></figcaption></figure>
+      <figure class="hero-arm"><video autoplay muted loop playsinline preload="metadata" poster="static/videos/rollouts/xarm7/mug_hang/verified_20261104/teacher_hud.jpg" aria-label="xArm7 Teacher selected simulation highlight"><source src="static/videos/rollouts/xarm7/mug_hang/verified_20261104/teacher_hud.mp4" type="video/mp4"></video><figcaption><strong>xArm7</strong><span>Teacher</span></figcaption></figure>
+    </div>
+    <div class="hero-five-caption"><span>Five arms · selected simulation highlights</span><button type="button" id="heroLoopsToggle" aria-label="Pause five robot previews">Pause previews</button></div>
   </div>
 </header>
-<main id="main">
-  <section class="hero wrap" id="top" aria-labelledby="project-title">
-    <div class="hero-copy">
-      <p class="project-note">机器人操作 · 世界模型 · 仿真研究</p>
-      <h1 id="project-title">让机械臂在想象中学习，<br>在仿真中验证。</h1>
-      <p class="hero-intro">看真实保存的动作录像，切换机器人与策略，了解在线世界模型如何帮助机械臂学习操作。</p>
-      <div class="actions"><a class="button primary" href="#gallery">观看实验录像</a><a class="button" href="#quickstart">本地启动</a></div>
-      <p class="small">无需安装即可观看。独立研究项目，当前展示均为仿真。</p>
-    </div>
-    <figure class="hero-visual">
-      <a href="?robot=panda&amp;clip=panda-v7#gallery" aria-label="观看 Panda Dyna 挂杯录像"><img src="static/videos/rollouts/panda/mug_hang/panda_mug_v7_final.jpg" width="1280" height="720" alt="Panda 机械臂与杯架的仿真录像画面" fetchpriority="high"></a>
-      <figcaption><span>Panda / 在线 Dyna</span><a href="?robot=panda&amp;clip=panda-v7#gallery">播放这段录像</a></figcaption>
-    </figure>
-  </section>
 
-  <section class="section gallery-section" id="gallery" aria-labelledby="gallery-title">
-    <div class="wrap">
-      <div class="section-heading"><div><h2 id="gallery-title">🎬 先看看，它们怎么动</h2><p>选一台机器人、一种任务，暂停或拖动进度，观察每一步接触。</p></div><a href="#film">看项目短片</a></div>
-      <div class="gallery-controls">
-        <div class="filter-group" data-filter="robot" role="group" aria-label="按机器人筛选">
-          <span class="filter-label">机器人</span>
-          <button class="filter-pill active" data-value="all">全部</button><button class="filter-pill" data-value="panda">Panda</button><button class="filter-pill" data-value="arx5">ARX5</button><button class="filter-pill" data-value="piper">PiPER</button><button class="filter-pill" data-value="ur5e">UR5e</button><button class="filter-pill" data-value="xarm7">xArm7</button>
-        </div>
-        <div class="filter-group" data-filter="task" role="group" aria-label="按任务筛选">
-          <span class="filter-label">任务</span><button class="filter-pill active" data-value="all">全部</button><button class="filter-pill" data-value="mug_hang">挂杯</button><button class="filter-pill" data-value="lemon">柠檬放置</button>
-        </div>
-        <span class="gallery-count" id="galleryCount" aria-live="polite"></span>
+<nav class="nav">
+  <div class="container-wide">
+    <a href="#film">Film</a>
+    <a href="#abstract">Overview</a>
+    <a href="#method">Method</a>
+    <a href="#results">Results</a>
+    <a href="#matrix">Embodiments</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#faq">FAQ</a>
+    <a href="#credits">Sources</a>
+  </div>
+</nav>
+
+<!-- Film (teaser) -->
+<section class="section" id="film">
+  <div class="container-wide">
+    <div class="kicker">Teaser</div>
+    <h2>Watch the film</h2>
+    <div class="underline"></div>
+    <div class="figure-card film-card">
+      <video class="film" id="filmVideo" autoplay muted playsinline controls loop poster="static/videos/teaser.jpg">
+        <source src="static/videos/teaser.mp4" type="video/mp4">
+      </video>
+      <p class="figure-caption">Selected simulation clips from the BC initialization, teacher and online-Dyna policies. These are demonstrations, not a synchronized or paired episode comparison. Scores refer to separate held-out evaluations; this legacy teaser uses edited playback timing.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Overview -->
+<section class="section alt" id="abstract">
+  <div class="container">
+    <h2>What this project tests</h2>
+    <div class="underline"></div>
+    <p>Embodied-SuperMimic studies task-specific policies trained through learned differentiable dynamics.
+    It builds on <a href="https://github.com/emoPointer/supermimic_manipulation">emoPointer's manipulation implementation</a>
+    and the SuperMimic method. Each robot-task expert currently has its own world model and policy.
+    Online simulator transitions refit the model; imagined returns provide policy gradients.</p>
+    <p>The current evidence is strongest for mug hanging: five teacher baselines, multi-seed online-versus-frozen-model
+    controls on Panda and ARX5, and single-seed Dyna runs on PiPER, UR5e and xArm7.
+    The wider target is five arms across five tasks, followed by five-task training within each robot.
+    This is a target, not a completed benchmark: only eight robot-task cells currently have formal teacher results.</p>
+    <p>All footage is simulation. The project is independent of the original SuperMimic authors.
+    Algorithm code, reset banks and model weights are being prepared for a separately audited release.</p>
+  </div>
+</section>
+
+<!-- Claims -->
+<section class="section">
+  <div class="container">
+    <h2>Evidence before scale</h2>
+    <div class="underline"></div>
+    <div class="grid cols-3">
+      <div class="card">
+        <div class="stat">79.3%</div>
+        <h3>Teacher baseline on mug_hang</h3>
+        <p>Panda baseline at 4,000 iterations: 203/256 held-out episodes succeed. Legacy broad-random ungrasped starts account for 28/64; this mixed-reset result is not a HOME full-task score.</p>
       </div>
-      <div class="clips-panel">
-        <div class="clips-stage">
-          <div class="clips-screen"><video id="galleryVideo" muted playsinline autoplay loop preload="metadata" disablepictureinpicture aria-label="所选仿真录像"></video><p class="player-empty" id="playerEmpty" hidden>这个组合还没有录像，请换一个机器人或任务。</p></div>
-          <div class="clips-controls">
-            <button type="button" id="togglePlayback" class="clip-restart" aria-label="暂停视频">暂停</button><button type="button" id="restartClip" class="clip-restart">重新播放</button>
-            <span class="playback-note" id="playerStatus" role="status">静音循环</span>
-            <div class="clips-pills" id="modePills" role="group" aria-label="画面模式"><button class="clips-pill" data-mode="plain">原画</button><button class="clips-pill" data-mode="hud">轨迹 HUD</button></div>
-          </div>
-          <div class="seek-row"><input id="clipSeek" type="range" min="0" max="1000" value="0" aria-label="视频进度"><span class="seek-time" id="seekTime">0.0 / 0.0 s</span></div>
-          <div class="clips-caption" id="clipCaption" aria-live="polite"></div><p class="clip-context" id="clipContext"></p>
-        </div>
-        <aside class="clips-rail" aria-label="录像列表"><p class="clips-label">选择一段录像</p><div id="clipList"></div></aside>
+      <div class="card">
+        <div class="stat">5 × 5</div>
+        <h3>A full matrix, not selected platforms</h3>
+        <p>Five robots across five tasks is the target. We publish the status of every cell, including physical-validation failures and work not yet trained.</p>
       </div>
-      <p class="gallery-footer">选定的历史仿真演示，Teacher / BC / Dyna 分开呈现。完整评测设置与录像起点、计时说明见文档。<a href="https://github.com/FBddcz/Embodied-SuperMimic/blob/main/docs/EXPERIMENTS.md#video-interpretation">录像说明</a></p>
-      <noscript><p>筛选播放器需要 JavaScript。也可以直接观看 <a href="static/videos/rollouts/piper/mug_hang/verified_20261104/teacher_hud.mp4">PiPER Teacher 挂杯 MP4</a>。</p></noscript>
+      <div class="card">
+        <div class="stat">87.1%</div>
+        <h3>Online Dyna on legacy mug_hang</h3>
+        <p>Panda online Dyna at the reported 3,000 iteration label: 87.1 ± 8.1% over three seeds. The matched frozen-world-model control scores 38.4 ± 7.9%.</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section wrap" id="use" aria-labelledby="use-title">
-    <h2 id="use-title">🚀 你想从哪里开始？</h2>
-    <div class="entry-paths">
-      <article><h3>现在看演示</h3><p>浏览器里切换五种机器人，查看策略动作、历史轨迹和结果。</p><a href="#gallery">打开录像库</a></article>
-      <article><h3>本地运行网页</h3><p>Python 标准库即可启动。没有 GPU、API Key 或 npm 构建要求。</p><a href="#quickstart">复制启动命令</a></article>
-      <article><h3>研究与复现</h3><p>查看协议、成功计数和公开材料，明确哪些可以复现。</p><a href="https://github.com/FBddcz/Embodied-SuperMimic/blob/main/docs/REPRODUCIBILITY.md">阅读复现说明</a></article>
-    </div>
-    <p class="scope-note">网页、录像与结果已公开，可直接启动与检查。训练代码、模型和复位库尚未作为算法复现包发布。</p>
-    <div class="quickstart" id="quickstart">
-      <div><h3>本地启动，三行就够</h3><p>准备 Git 与 Python 3.9+，运行后打开 <a href="http://127.0.0.1:8765/#gallery">127.0.0.1:8765</a>。</p><p class="small">Windows 用 <code>py -3</code>；端口冲突可换 8766。服务仅监听本机，Ctrl+C 停止。</p></div>
-      <pre><code>git clone https://github.com/FBddcz/Embodied-SuperMimic.git
-cd Embodied-SuperMimic
-python3 scripts/serve.py --port 8765</code></pre>
-    </div>
-    <details><summary>修改网页后，如何检查？</summary><div class="details-body"><pre><code>python3 scripts/check_site.py
-python3 scripts/test_preview.py
-node --check site/static/js/gallery.js</code></pre><p>最后一项需要 Node.js。修改公开文件后更新 release manifest 的大小和哈希。<a href="https://github.com/FBddcz/Embodied-SuperMimic/blob/main/docs/QUICKSTART.md">完整本地指南</a></p></div></details>
-  </section>
+<!-- Method -->
+<section class="section alt" id="method">
+  <div class="container">
+    <h2>The online learning loop</h2>
+    <div class="underline"></div>
+    <div class="loop-card"><div class="loop">
+      <div class="loop-step"><span class="loop-num">1</span><strong>Collect</strong><p>Run the current policy in simulation and add transitions to replay.</p></div><div class="loop-arrow">&rarr;</div>
+      <div class="loop-step"><span class="loop-num">2</span><strong>Fit</strong><p>Refit the robot-task world model on recent replay data.</p></div><div class="loop-arrow">&rarr;</div>
+      <div class="loop-step"><span class="loop-num">3</span><strong>Imagine</strong><p>Unroll the learned dynamics with differentiable rewards and a survival model.</p></div><div class="loop-arrow">&rarr;</div>
+      <div class="loop-step"><span class="loop-num">4</span><strong>Improve</strong><p>Update the actor through BPTT and train a value bootstrap, then collect again.</p></div>
+    </div></div>
+    <h3>What v7 changes</h3>
+    <p>The Dyna experiment initializes dynamics and critic from a trained teacher and initializes the actor by
+    behavior cloning, then continues online collection and model refitting. The frozen-model control uses the same
+    initialization but no further collection or model fitting. Teacher pretraining, BC initialization and online
+    update costs must be counted separately; this is not a matched from-scratch compute claim.</p>
+    <h3>Current scope</h3>
+    <p>Policies consume state, not RGB images. Control uses relative operational-space commands and a gripper signal.
+    The current public release focuses on single-task experts and their controls. A unified five-task policy
+    within each robot is planned, not an established result. Earlier exploratory branches remain archived outside this website release.</p>
+  </div>
+</section>
 
-  <section class="section pale" id="results" aria-labelledby="results-title">
-    <div class="wrap">
-      <div class="section-heading"><div><h2 id="results-title">📊 看看它学得怎么样</h2><p>挂杯任务，Teacher 与在线 Dyna 分开看。</p></div><a href="https://github.com/FBddcz/Embodied-SuperMimic/blob/main/results/mainline.json">原始计数摘要</a></div>
-      <div class="table-wrap" tabindex="0" role="region" aria-label="历史挂杯成绩，窄屏可横向滚动"><table>
-        <thead><tr><th scope="col">机器人</th><th scope="col">Teacher</th><th scope="col">Dyna @3000</th><th scope="col">Dyna @4000</th><th scope="col">Dyna 训练 seed</th></tr></thead>
-        <tbody><tr><th scope="row">Panda</th><td>79.3%</td><td>87.1 ± 8.1%</td><td>—</td><td>3</td></tr>
-        <tr><th scope="row">ARX5</th><td>97.7%</td><td>98.1 ± 1.4%</td><td>—</td><td>3</td></tr>
-        <tr><th scope="row">PiPER</th><td>46.1%</td><td>85.94%</td><td>92.97%</td><td>1</td></tr>
-        <tr><th scope="row">UR5e</th><td>62.5%</td><td>68.75%</td><td>69.92%</td><td>1</td></tr>
-        <tr><th scope="row">xArm7</th><td>46.5%</td><td>51.95%</td><td>57.81%</td><td>1</td></tr></tbody>
+<!-- Results -->
+<section class="section" id="results">
+  <div class="container">
+    <h2>What the experiments show</h2><div class="underline"></div>
+    <p class="table-caption">Historical <code>legacy_reset_v0</code> mixes four reset categories. <code>home_fulltask_v1</code> is being implemented; no new HOME scores are reported. <a href="https://github.com/FBddcz/Embodied-SuperMimic/blob/main/docs/EXPERIMENTS.md">Protocol details</a>.</p>
+    <p>The strongest controlled comparison so far tests online data collection and model refitting
+    against a frozen-world-model control from the same initialization. Both use BPTT.
+    The numbers below describe these runs, not a guarantee across every task or robot.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Robot / mug hanging</th><th>Online Dyna</th><th>Frozen-model control</th><th>Completed seeds</th></tr></thead>
+      <tbody>
+        <tr><td>Panda</td><td>87.1 ± 8.1%</td><td>38.4 ± 7.9%</td><td>3 / 3</td></tr>
+        <tr><td>ARX5</td><td>98.1 ± 1.4%</td><td>39.8 ± 12.7%</td><td>3 / 2; one control diverged</td></tr>
+      </tbody>
+    </table></div>
+    <p class="table-caption">Reported at iteration label 3000, with 256 held-out episodes per checkpoint.
+    Values are mean ± standard deviation across training seeds. Teacher pretraining and BC initialization
+    are additional costs. New single-seed robot results are listed in the next table.</p>
+    <div id="mainline-validation">
+      <h3>Full matrix, explicit progress</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Task</th><th>Panda</th><th>ARX5</th><th>PiPER</th><th>UR5e</th><th>xArm7</th></tr></thead>
+        <tbody>
+          <tr><td>Mug hanging</td><td>Teacher evaluated</td><td>Teacher evaluated</td><td>Teacher evaluated</td><td>Teacher evaluated</td><td>Teacher evaluated</td></tr>
+          <tr><td>Lemon placement</td><td>Teacher evaluated</td><td>Teacher evaluated</td><td>Teacher evaluated</td><td>Contract passed</td><td>Contract passed</td></tr>
+          <tr><td>Square insertion</td><td>Small bank passed</td><td>Small bank passed</td><td>Pre-grasp check failed</td><td>Small bank passed</td><td>Small bank passed</td></tr>
+          <tr><td>Drawer (preopened place-and-close)</td><td>IK witness failed</td><td>Small bank passed</td><td>IK witness failed</td><td>Physical sequence failed</td><td>Physical sequence failed</td></tr>
+          <tr><td>Box placement</td><td>Sampling insufficient</td><td>Small bank passed</td><td>Sampling insufficient</td><td>Sampling insufficient</td><td>Sampling insufficient</td></tr>
+        </tbody>
       </table></div>
-      <p class="result-note">四类混合起点评测（256 集/检查点），不同于 HOME 完整任务评测；详细设置见展开项。</p>
-      <details><summary>查看计数、控制组与比较条件</summary><div class="details-body">
-        <ul><li>历史 <code>legacy_reset_v0</code> 包含未抓取、桌面已抓握、空中已抓握与已穿柄起点。跨机器人复位与控制配置不同；新 <code>home_fulltask_v1</code> 正在实现，尚无正式分数。</li><li>PiPER：220/256 @3000、238/256 @4000；UR5e：176/256、179/256。</li><li>最终 legacy 广范围随机 type-0：UR5e 0/64、xArm7 1/64。低分不证明硬件上限。</li><li>冻结模型控制：Panda 38.4 ± 7.9%（3 个 seed）；ARX5 39.8 ± 12.7%（2 个完成、1 个发散）。</li><li>v7 初始化计数 1000，3000/4000 分别对应约 2000/3000 新增在线迭代，不是与教师等预算从零训练。± 为训练 seed 间标准差。</li></ul>
-        <p><a href="https://github.com/FBddcz/Embodied-SuperMimic/blob/main/docs/EXPERIMENTS.md">完整评测协议与来源说明</a></p>
-      </div></details>
-      <details id="matrix"><summary>五种机器人 × 五类任务：查看完整 25 格进展</summary><div class="details-body">
-        <p><strong>5 × 5 是目标，不是完成数量。</strong> 历史正式教师 8/25，环境契约 25/25；新增开发库 6 通过、9 阻塞。契约通过不代表任务或 HOME 验证完成，blocked 不是 0% 成功率。</p>
-        <div class="table-wrap" tabindex="0" role="region" aria-label="25 格历史状态，窄屏可横向滚动"><table class="matrix-table"><thead><tr><th>任务</th><th>Panda</th><th>ARX5</th><th>PiPER</th><th>UR5e</th><th>xArm7</th></tr></thead><tbody>
-          <tr><th>挂杯</th><td>教师已评测</td><td>教师已评测</td><td>教师已评测</td><td>教师已评测</td><td>教师已评测</td></tr>
-          <tr><th>柠檬放置</th><td>教师已评测</td><td>教师已评测</td><td>教师已评测</td><td>仅契约通过</td><td>仅契约通过</td></tr>
-          <tr><th>方螺母插入</th><td>小库通过</td><td>小库通过</td><td>阻塞：预抓取 0/3</td><td>小库通过</td><td>小库通过</td></tr>
-          <tr><th>放物关抽屉</th><td>阻塞：IK 见证</td><td>小库通过</td><td>阻塞：IK 见证</td><td>阻塞：碰撞/限位/抓抬</td><td>阻塞：碰撞/限位/抓抬</td></tr>
-          <tr><th>盒子入箱</th><td>阻塞：候选不足</td><td>小库通过</td><td>阻塞：候选不足</td><td>阻塞：候选不足</td><td>阻塞：候选不足</td></tr>
-        </tbody></table></div>
-        <p>抽屉预先打开，任务为放物并关抽屉，<strong>不包含开抽屉</strong>。同一本体五任务混训是后续比较，尚未完成。</p>
-        <div class="robot-previews"><figure><img src="static/img/piper/piper_matrix.png" alt="PiPER 历史仿真复位画面" loading="lazy"><figcaption>PiPER</figcaption></figure><figure><img src="static/img/ur5e/ur5e_matrix.png" alt="UR5e 历史仿真复位画面" loading="lazy"><figcaption>UR5e</figcaption></figure><figure><img src="static/img/xarm7/xarm7_matrix.png" alt="xArm7 历史仿真复位画面" loading="lazy"><figcaption>xArm7</figcaption></figure></div>
-        <p class="small">历史复位示意，不是已验证的新 HOME 起点。UR5e / xArm7 夹爪使用棱柱手指近似，不宣称真机结构等价。</p>
-      </div></details>
+      <p class="table-caption">Snapshot: November 4, 2026. All 25 environment contracts pass; eight cells have formal teacher results.
+      The 15 newly adapted cells have six successful small development-bank probes and nine failures.
+      A failed small probe does not prove the task is physically impossible, and a contract pass is not task completion.
+      Five-task mixed training within each robot has not started.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section wrap" id="method" aria-labelledby="method-title">
-    <div class="method-copy"><h2 id="method-title">🧠 在研究什么？</h2><p>从自己的新经验中继续学习：策略在仿真中行动，世界模型吸收新转移，再通过可微想象轨迹更新策略。我们关注这种在线循环，能否持续改善操作表现。</p><p>每个机器人与任务有自己的专家。当前策略使用状态观测，v7 从教师世界模型、critic 和 BC 策略初始化后继续学习。</p></div>
-    <details id="home-protocol"><summary>了解完整起点评测</summary><div class="details-body"><p><code>home_fulltask_v1</code> 使用预先固定并验证的准备姿态，随机物体与目标，张开空夹爪，从任务开始执行。保持原生成功标准与时限，历史中途复位成绩另列。</p><p>协议正在实现、尚未冻结，没有新 HOME 正式分数。安全起点不等于完整路径或真机安全认证。抽屉任务从预打开状态放物并关抽屉，不包含打开动作。</p><a href="https://github.com/FBddcz/Embodied-SuperMimic/blob/main/docs/EXPERIMENTS.md#home_fulltask_v1">阅读协议概要</a></div></details>
-    <details id="film"><summary>🎞️ 看项目短片与双机器人蒙太奇</summary><div class="details-body film-grid">
-      <figure><video controls muted loop playsinline preload="none" poster="static/videos/teaser.jpg"><source src="static/videos/teaser.mp4" type="video/mp4"></video><figcaption>BC、Teacher 与 Dyna 选定片段；不是同步或配对回合。历史编辑节奏，不是实时完整任务证据。</figcaption></figure>
-      <figure><video controls muted loop playsinline preload="none" poster="static/videos/hero_robots_poster.jpg"><source src="static/videos/hero_robots.mp4" type="video/mp4"></video><figcaption>Panda 与 ARX5 历史演示蒙太奇；循环不代表连续重复完成任务。</figcaption></figure>
-    </div></details>
-  </section>
+<!-- Embodiments x Tasks -->
+<section class="section" id="matrix">
+  <div class="container">
+    <div class="kicker">Coverage</div>
+    <h2>Embodiments &times; tasks</h2>
+    <div class="underline"></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Embodiment</th><th>DoF + gripper</th><th>mug_hang teacher</th><th>+ online Dyna (v7)</th><th>Port status</th></tr>
+        <tr><td>Panda</td><td>7 + 2, Franka Hand</td><td>79.3%</td><td>87.1 &plusmn; 8.1% (3 seeds)</td><td>complete</td></tr>
+        <tr><td>ARX5</td><td>6 + 2, parallel gripper</td><td>97.7%</td><td>98.1 &plusmn; 1.4% (3 seeds)</td><td>complete</td></tr>
+        <tr><td>PiPER</td><td>6 + 2, parallel gripper</td><td>46.1%</td><td>85.9% @3000<br>93.0% @4000</td><td>v7 evaluated; 1 seed, 256 held-out episodes; different iteration budgets shown separately</td></tr>
+        <tr><td>UR5e</td><td>6 + 2, Robotiq 2F-85*</td><td>62.5%</td><td>68.8% @3000<br>69.9% @4000</td><td>v7 evaluated; 1 seed; legacy broad-random type-0 still 0/64 at iteration 4000</td></tr>
+        <tr><td>xArm7</td><td>7 + 2, xArm gripper*</td><td>46.5%</td><td>51.95% @3000<br>57.81% @4000</td><td>v7 evaluated; 1 training seed; legacy type-0 1/64 at 4000</td></tr>
+      </table>
+    </div>
+    <p class="table-caption">
+      Held-out success on 256 episodes (4 reset categories &times; 64). These historical mixed-reset scores are not HOME full-task scores.
+      PiPER, UR5e and xArm7 v7 results are single-training-seed runs. @3000 and @4000 are total iteration labels (BC initialization starts at 1000); the latter uses additional training budget.
+      Gallery clips labelled Teacher still show the baseline checkpoint, not the updated v7 policy. Robot-specific reset banks and gripper models differ, so cross-robot score differences do not isolate morphology alone.
+      PiPER’s lemon teacher reached 99.2% held-out, our pipeline-acceptance task; lemon numbers are deliberately not part of this table.
+      * The four-bar gripper linkage is replaced by two prismatic fingers whose open and closed poses are measured from the stock model,
+      so the fingers look detached from the gripper body in renders. Per-finger travel differs across robots (about 3.5 to 4.5 cm).
+      All five embodiments now have full mug_hang reset banks (4 &times; 10,000 train states; 4 &times; 256 held-out).
+    </p>
+    <p class="table-caption">UR5e / xArm7: preliminary diagnostics indicate that the legacy random-start setup affected performance. We plan to retrain from validated safe HOME starts and update the scores when complete.</p>
+    <div class="grid cols-3" style="margin-top:22px">
+      <figure class="video-card">
+        <img src="static/img/piper/piper_matrix.png" alt="PiPER at a legacy reset posture, not validated HOME" style="width:100%;display:block">
+        <figcaption>PiPER at reset: reaching forward, approach axis nearly horizontal.</figcaption>
+      </figure>
+      <figure class="video-card">
+        <img src="static/img/ur5e/ur5e_matrix.png" alt="UR5e at a legacy reset posture, not validated HOME" style="width:100%;display:block">
+        <figcaption>UR5e at reset: elbow-up, gripper pointing straight down.</figcaption>
+      </figure>
+      <figure class="video-card">
+        <img src="static/img/xarm7/xarm7_matrix.png" alt="xArm7 at a legacy reset posture, not validated HOME" style="width:100%;display:block">
+        <figcaption>xArm7 at reset: 7-DoF, gripper pointing straight down.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
-  <section class="section pale" id="docs" aria-labelledby="docs-title"><div class="wrap">
-    <h2 id="docs-title">📚 想深入？从这里查</h2>
-    <div class="doc-links"><a href="https://github.com/FBddcz/Embodied-SuperMimic/blob/main/docs/QUICKSTART.md"><strong>快速上手</strong><span>本地启动与网页修改</span></a><a href="https://github.com/FBddcz/Embodied-SuperMimic/blob/main/docs/EXPERIMENTS.md"><strong>实验与协议</strong><span>计分、预算与完整矩阵</span></a><a href="https://github.com/FBddcz/Embodied-SuperMimic/blob/main/docs/REPRODUCIBILITY.md"><strong>复现说明</strong><span>公开材料与复现边界</span></a><a href="https://github.com/FBddcz/Embodied-SuperMimic/blob/main/results/mainline.json"><strong>结构化结果</strong><span>成功计数与来源标识</span></a></div>
-    <div class="contribute"><div><h3>🤝 一起把研究做得更清楚</h3><p>播放问题、实验讨论和失败案例都欢迎。如果演示对你有帮助，也欢迎在 GitHub 留下一颗 Star。</p></div><a class="button" href="https://github.com/FBddcz/Embodied-SuperMimic/blob/main/CONTRIBUTING.md">参与贡献</a></div>
-  </div></section>
-  <section class="section wrap star-history" id="stars" aria-labelledby="stars-title">
-    <h2 id="stars-title">⭐ Star History</h2>
-    <p>感谢每一份关注，让更多人一起探索机械臂世界模型。</p>
-    <a href="https://star-history.com/#FBddcz/Embodied-SuperMimic&amp;Date" title="图表随 Star History 服务刷新；点击查看交互页面"><img src="https://api.star-history.com/svg?repos=FBddcz/Embodied-SuperMimic&amp;type=Date" alt="Embodied-SuperMimic GitHub Star 历史曲线，由 Star History 提供" loading="lazy" referrerpolicy="no-referrer"></a>
-    <p class="small"><a href="https://github.com/FBddcz/Embodied-SuperMimic/stargazers">查看 GitHub 关注者</a> · <a href="https://star-history.com/#FBddcz/Embodied-SuperMimic&amp;Date">打开交互图表</a></p>
-  </section>
-</main>
-<footer class="footer wrap" id="credits">
-  <p><strong>Embodied-SuperMimic</strong> · 独立仿真研究。感谢 <a href="https://github.com/emoPointer/supermimic_manipulation">emoPointer</a>、<a href="https://supermimic.github.io/">SuperMimic</a> 与机器人仿真社区。<a href="https://github.com/FBddcz/Embodied-SuperMimic/blob/main/THIRD_PARTY_NOTICES.md">全部来源与许可</a> · <a href="https://github.com/FBddcz/Embodied-SuperMimic/blob/main/docs/RELEASE_STATUS.md">发布记录</a> · <a href="release-manifest.json">文件哈希</a></p>
-</footer>
-<script src="static/js/gallery.js?v=20261104-reader1"></script>
+<!-- Roadmap -->
+<section class="section" id="roadmap">
+  <div class="container">
+    <h2>The full 5 × 5 roadmap</h2><div class="underline"></div>
+    <div class="grid cols-3">
+      <div class="card"><h3>Single-task experts</h3><p>Panda, ARX5, PiPER, UR5e and xArm7 on mug hanging, lemon placement, square insertion, preopened-drawer place-and-close (not opening), and box placement. Eight of 25 cells currently have formal teacher results.</p></div>
+      <div class="card"><h3>Physical validation</h3><p>All 25 environment contracts pass. Small development banks for the 15 new cells pass in six cases and fail in nine as of November 4. Failures remain visible; a contract check is not task completion.</p></div>
+      <div class="card"><h3>Five tasks within each robot</h3><p>After individual tasks are validated, test a task-conditioned policy and shared world model within each of the five robots. Compare task-wise success, forgetting and matched training budgets. Not yet trained.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="section gallery-section" id="gallery">
+  <div class="container-wide">
+    <div class="kicker">Rollouts</div>
+    <h2>Gallery</h2>
+    <div class="underline"></div>
+    <p class="section-lead gallery-lead">Selected historical simulation demonstrations, not a representative test sample. Clips autoplay and loop; HUD adds ghost silhouettes of past poses, the grasp-point trail, object and goal markers, and a distance curve.</p>
+    <div class="gallery-controls">
+      <div class="filter-group" data-filter="robot">
+        <span class="filter-label">Embodiment</span>
+        <button class="filter-pill active" data-value="all">All</button>
+        <button class="filter-pill" data-value="panda">Panda</button>
+        <button class="filter-pill" data-value="arx5">ARX5</button>
+        <button class="filter-pill" data-value="piper">PiPER</button>
+        <button class="filter-pill" data-value="ur5e">UR5e</button>
+        <button class="filter-pill" data-value="xarm7">xArm7</button>
+      </div>
+      <div class="filter-group" data-filter="task">
+        <span class="filter-label">Task</span>
+        <button class="filter-pill active" data-value="all">All</button>
+        <button class="filter-pill" data-value="mug_hang">Mug hanging</button>
+        <button class="filter-pill" data-value="lemon">Lemon placement</button>
+      </div>
+      <div class="gallery-count" id="galleryCount"></div>
+    </div>
+    <div class="clips-panel">
+      <aside class="clips-rail">
+        <div class="clips-label">Clips</div>
+        <div id="clipList"></div>
+      </aside>
+      <div class="clips-stage">
+        <div class="clips-screen">
+          <video id="galleryVideo" muted playsinline autoplay loop preload="auto" disablepictureinpicture></video>
+          <p class="player-empty" id="playerEmpty" hidden>No recording for this selection yet.</p>
+        </div>
+        <div class="clips-controls">
+          <button type="button" id="togglePlayback" class="clip-restart" aria-label="Pause video">Pause</button>
+          <button id="restartClip" class="clip-restart"><span class="restart-icon">&#8634;</span> Restart</button>
+          <span class="playback-note" id="playerStatus" role="status">Auto loop</span>
+          <div class="clips-pills" id="modePills">
+            <button class="clips-pill" data-mode="plain">Plain</button>
+            <button class="clips-pill" data-mode="hud">HUD</button>
+          </div>
+        </div>
+        <div class="seek-row">
+          <input id="clipSeek" type="range" min="0" max="1000" value="0" aria-label="Video position">
+          <span class="seek-time" id="seekTime">0.0 / 0.0 s</span>
+        </div>
+        <div class="clips-caption" id="clipCaption"></div>
+        <p class="clip-context" id="clipContext"></p>
+      </div>
+    </div>
+    <p class="gallery-footer">HUD means heads-up display: trajectory, distance and success annotations. Blue silhouettes show past poses, not world-model predictions. New PiPER, UR5e and xArm7 clips play at real-time speed; older clips are marked legacy capture. Loop playback does not imply the robot repeats the task continuously.</p>
+  </div>
+</section>
+
+<script src="static/js/gallery.js?v=20261104-r5-labels1"></script>
+
+<!-- FAQ -->
+<section class="section alt" id="faq">
+  <div class="container">
+    <div class="kicker">Questions</div>
+    <h2>FAQ</h2>
+    <div class="underline"></div>
+    <details class="faq"><summary>Why not just train the policy offline on collected data?</summary>
+      <p>In our matched controls, keeping replay and the world model frozen degraded policies to 38.4 ± 7.9% on Panda and 39.8 ± 12.7% on two completed ARX5 seeds; one ARX5 seed diverged. These observations are consistent with model exploitation, but are not a claim that all offline model-based policy learning must fail.</p></details>
+    <details class="faq"><summary>Does one policy already perform all five tasks?</summary>
+      <p>No. Current evaluated policies are separate robot-task experts. Each robot's five-task mixed policy is a planned comparison against those experts, not a completed release.</p></details>
+    <details class="faq"><summary>Is the world model frozen during policy updates?</summary>
+      <p>Stop-gradient only inside the policy backward pass, exactly as in the original SuperMimic loop: the model is refit on fresh replay between rounds, but never updated by the policy's gradients.</p></details>
+    <details class="faq"><summary>How is success measured?</summary>
+      <p>Held-out 4&times;64 resets (seeds 100000), 256 episodes per checkpoint, four difficulty categories &mdash; the same protocol for teachers, Dyna runs, and controls.</p></details>
+  </div>
+</section>
+
+<!-- Credits and release status -->
+<section class="section" id="credits">
+  <div class="container">
+    <h2>Sources &amp; release status</h2><div class="underline"></div>
+    <p>This is a research preview maintained by <a href="https://github.com/FBddcz">FBddcz</a>.
+    No paper has been published for this project. The website repository contains the static site and selected
+    demonstration footage only; training code, weights and reset banks are being prepared for a separate release.</p>
+    <ul>
+      <li>Method: <a href="https://supermimic.github.io/">SuperMimic</a>.</li>
+      <li>Manipulation implementation: <a href="https://github.com/emoPointer/supermimic_manipulation">emoPointer/supermimic_manipulation</a> (MIT).</li>
+      <li>Simulation tools: <a href="https://github.com/mujocolab/mjlab">mjlab</a> and <a href="https://github.com/google-deepmind/mujoco">MuJoCo</a>.</li>
+      <li>Robot assets: <a href="https://github.com/google-deepmind/mujoco_menagerie">MuJoCo Menagerie</a>, with individual model notices preserved in the website repository.</li>
+      <li>Page and rollout presentation inspired by <a href="https://lzyang2000.github.io/morphmimic/">MorphMimic</a> and SuperMimic. No affiliation or endorsement is implied.</li>
+    </ul>
+    <p><a href="https://github.com/FBddcz/Embodied-SuperMimic">Website source and release notes</a></p>
+  </div>
+</section>
+
+<!-- Back to top -->
+<button id="back-top" aria-label="Back to top">↑</button>
+
 <script>
+// Back to top visibility
+const btn = document.getElementById('back-top');
+window.addEventListener('scroll', () => {
+  btn.classList.toggle('visible', window.scrollY > 400);
+});
+btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+</script>
+
+
+<script>
+// Only the additive five-arm strip; the original gallery controls are unchanged.
 (function () {
-  function revealHash() {
-    var id = location.hash.slice(1);
-    var node = document.getElementById(id);
-    if (!node) return;
-    var details = node.closest('details');
-    if (details) { details.open = true; node.scrollIntoView(); }
-  }
-  window.addEventListener('hashchange', revealHash);
-  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-    link.addEventListener('click', function () {
-      var target = document.getElementById(link.getAttribute('href').slice(1));
-      if (target && target.tagName === 'DETAILS') target.open = true;
+  var previews = Array.from(document.querySelectorAll('.hero-five-strip video'));
+  var toggle = document.getElementById('heroLoopsToggle');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var paused = reduced.matches;
+  function apply() {
+    previews.forEach(function (video) {
+      video.muted = true; video.defaultMuted = true; video.autoplay = !paused;
+      if (paused) video.pause();
+      else { var promise = video.play(); if (promise && promise.catch) promise.catch(function () {}); }
     });
-  });
-  revealHash();
+    toggle.textContent = paused ? 'Play previews' : 'Pause previews';
+    toggle.setAttribute('aria-label', paused ? 'Play five robot previews' : 'Pause five robot previews');
+  }
+  toggle.addEventListener('click', function () { paused = !paused; apply(); });
+  if (reduced.addEventListener) reduced.addEventListener('change', function (event) { if (event.matches) { paused = true; apply(); } });
+  apply();
 })();
 </script>
 </body>

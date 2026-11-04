@@ -15,7 +15,7 @@
 
 [🎥 看录像](https://fbddcz.github.io/Embodied-SuperMimic/#gallery) · [🚀 本地启动](#quickstart) · [📊 实验结果](#results) · [🧪 复现说明](docs/REPRODUCIBILITY.md)
 
-<a href="https://fbddcz.github.io/Embodied-SuperMimic/#gallery"><img src="site/static/videos/hero_robots_poster.jpg" width="900" alt="Panda 与 ARX5 仿真演示预览，点击进入在线录像库"></a>
+<a href="https://fbddcz.github.io/Embodied-SuperMimic/#gallery"><img src="docs/media/five-arms.gif" width="900" alt="五种机械臂循环演示，从左到右 Panda、ARX5、PiPER、UR5e、xArm7，点击观看网站录像"></a>
 
 **一个独立的机器人操作研究项目。** 从各机器人自己的任务专家出发，探索在线世界模型与策略如何共同改进。
 
@@ -28,15 +28,17 @@
 - **看得见的运动过程**：HUD 叠加历史姿态、末端轨迹与目标距离，让接触操作更容易看懂。
 - **可追溯的研究结果**：公开成功计数、训练种子和预算说明，保留未完成与失败项。
 
-## 🎬 点一张图，看看它怎么动
+## 🎬 五种机械臂，循环看动作
 
-| Panda · Dyna | PiPER · Teacher | UR5e · Teacher |
+| Panda · Dyna | ARX5 · Teacher | PiPER · Teacher |
 |:---:|:---:|:---:|
-| [![Panda Dyna 挂杯](site/static/videos/rollouts/panda/mug_hang/panda_mug_v7_final.jpg)](https://fbddcz.github.io/Embodied-SuperMimic/?robot=panda&clip=panda-v7#gallery) | [![PiPER Teacher 挂杯](site/static/videos/rollouts/piper/mug_hang/verified_20261104/teacher_hud.jpg)](https://fbddcz.github.io/Embodied-SuperMimic/?robot=piper&task=mug_hang&clip=piper-teacher#gallery) | [![UR5e Teacher 挂杯](site/static/videos/rollouts/ur5e/mug_hang/verified_20261104/teacher_hud.jpg)](https://fbddcz.github.io/Embodied-SuperMimic/?robot=ur5e&clip=ur5e-teacher#gallery) |
+| [![Panda Dyna 循环演示](docs/media/panda-dyna.gif)](https://fbddcz.github.io/Embodied-SuperMimic/static/videos/rollouts/panda/mug_hang/panda_mug_v7_final.mp4) | [![ARX5 Teacher 循环演示](docs/media/arx5-teacher.gif)](https://fbddcz.github.io/Embodied-SuperMimic/static/videos/rollouts/arx5/mug_hang/teacher.mp4) | [![PiPER Teacher 循环演示](docs/media/piper-teacher.gif)](https://fbddcz.github.io/Embodied-SuperMimic/static/videos/rollouts/piper/mug_hang/verified_20261104/teacher_hud.mp4) |
 
-[ARX5 挂杯](https://fbddcz.github.io/Embodied-SuperMimic/?robot=arx5#gallery) · [xArm7 挂杯](https://fbddcz.github.io/Embodied-SuperMimic/?robot=xarm7#gallery) · [PiPER 柠檬放置](https://fbddcz.github.io/Embodied-SuperMimic/?robot=piper&task=lemon#gallery) · [完整录像库](https://fbddcz.github.io/Embodied-SuperMimic/#gallery)
+| UR5e · Teacher | xArm7 · Teacher |
+|:---:|:---:|
+| [![UR5e Teacher 循环演示](docs/media/ur5e-teacher.gif)](https://fbddcz.github.io/Embodied-SuperMimic/static/videos/rollouts/ur5e/mug_hang/verified_20261104/teacher_hud.mp4) | [![xArm7 Teacher 循环演示](docs/media/xarm7-teacher.gif)](https://fbddcz.github.io/Embodied-SuperMimic/static/videos/rollouts/xarm7/mug_hang/verified_20261104/teacher_hud.mp4) |
 
-*选定的仿真演示；完整评测设置见 [实验说明](docs/EXPERIMENTS.md)。*
+*选定仿真片段的循环动图，点击看原视频。顶部为五路独立循环拼接；[完整录像库](https://fbddcz.github.io/Embodied-SuperMimic/#gallery) 支持按机器人和任务筛选。*
 
 ## 🧭 选一条路径开始
 
@@ -92,6 +94,8 @@ node --check site/static/js/gallery.js
 | xArm7 | 46.5% | 51.95% | 57.81% | 1 |
 
 > **历史四类混合起点评测**（`legacy_reset_v0`，256 集/检查点），非 HOME 全流程分数。预算和训练 seed 分列；教师与 BC 成本另计。新 HOME 协议尚无正式分数，完整设置见 [实验说明](docs/EXPERIMENTS.md)。
+
+UR5e / xArm7：初步诊断显示，旧版随机起姿设置影响了表现；后续将采用验证后的安全 HOME 重训，完成后更新成绩。
 
 <details>
 <summary>🔎 计数、控制组与完整 25 格状态</summary>

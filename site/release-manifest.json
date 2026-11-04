@@ -1,5 +1,5 @@
 {
-  "release": "research-preview-2026-11-04",
+  "release": "research-preview-2026-11-04-reader1",
   "assets": [
     {
       "path": ".nojekyll",
@@ -8,18 +8,18 @@
     },
     {
       "path": "index.html",
-      "bytes": 25327,
-      "sha256": "79ad60ee6139a5dd359df9b6d24c67f5436d7173eb3f1c817931333e1e927f77"
+      "bytes": 17825,
+      "sha256": "4577f19054ca2f3e8809e9b27bae6bf2c2ad03997efe10c003e3eb97bbd1b722"
     },
     {
       "path": "static/css/gallery.css",
-      "bytes": 6346,
-      "sha256": "1b4cca531993ddb8a22d86d45f1d73a3374bd7003438492dc633615ecbe44976"
+      "bytes": 5280,
+      "sha256": "bd0e4ae59537929da7612a971b0de8469ee0acb248517143de4dfd9e757aeda9"
     },
     {
       "path": "static/css/index.css",
-      "bytes": 26882,
-      "sha256": "80427612ed59b9cdf0c3ae118c54c01a6a319d42a24961d02fe4c4d579759610"
+      "bytes": 9148,
+      "sha256": "2a345ed0e72a8e6d88b833419b67820dabe97b4518d5bee144b71cf88a69f25c"
     },
     {
       "path": "static/img/piper/piper_matrix.png",
@@ -38,8 +38,8 @@
     },
     {
       "path": "static/js/gallery.js",
-      "bytes": 10186,
-      "sha256": "2470f5c6cfbd00705789cf56834f90900c6cefaeb88bab5fb657854d60d3a07b"
+      "bytes": 12567,
+      "sha256": "471deea77091dbe8e8ea2a78e07df4300e816d63725eeeb6cb1d1fdf2d08776b"
     },
     {
       "path": "static/videos/hero_robots.mp4",
@@ -176,13 +176,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 6581,
-      "sha256": "6ebdde9ed1c0c811c5014cbc603614644c4600cc2e285a164205c1df04c42f40"
+      "bytes": 8221,
+      "sha256": "f00f986093494374b1416a29b382c706f20fa40fc40ae11bcf770f4c266dbb99"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 4563,
-      "sha256": "9e49d8f123eb33de0e34dbd616b93cf8e173870dca2338a3b04202df3b8ad0a4"
+      "bytes": 5305,
+      "sha256": "1e55aa1aed9607342c3cdcb2c90653ab4badecdd5bd2c1c6774c1766c2cb7e10"
     },
     {
       "path": "docs/EXPERIMENTS.md",
@@ -196,8 +196,8 @@
     },
     {
       "path": "docs/RELEASE_STATUS.md",
-      "bytes": 4320,
-      "sha256": "86f2cc1dc9f07b375b08e45f68ddf1a51a3e05a9ce160d068c2b5de9425dfa4a"
+      "bytes": 4631,
+      "sha256": "32b1ea76bb8775dbd6a76e6f865c4d6a68ec70674debfc1e62de50cf0e12ac4c"
     },
     {
       "path": "docs/REPRODUCIBILITY.md",
@@ -266,7 +266,7 @@
     "home_fulltask_v1": "approved_implementation_in_progress_not_frozen_no_new_scores",
     "home_jitter_v1": "planned_no_scores"
   },
-  "publication_status": "approved_pending_remote_verification",
+  "publication_status": "deployed_baseline_verified_local_redesign_not_yet_published",
   "media_scope": "Existing project-generated noncommercial simulation illustrations; not redistributed reference-project videos or raw models. Third-party rights are not relicensed under MIT; see THIRD_PARTY_NOTICES.md.",
   "media_timing": {
     "legacy_montages": [
@@ -293,10 +293,41 @@
   "inventory": {
     "public_file_count_including_manifest": 52,
     "hashed_file_count": 51,
-    "hashed_file_bytes_excluding_manifest": 4347222,
+    "hashed_file_bytes_excluding_manifest": 4325994,
     "media_file_count": 25,
     "video_file_count": 11,
     "image_file_count": 14,
     "media_bytes": 4176320
-  }
+  },
+  "verified_deployment_snapshot": {
+    "commit": "243bb861ee76caf0695fc070b6572fb19a3a2389",
+    "url": "https://fbddcz.github.io/Embodied-SuperMimic/",
+    "checked_by": "release_owner",
+    "verified": [
+      "HTTPS index",
+      "CSS and JS",
+      "three real-time teacher video hashes",
+      "HTTP Range 206"
+    ],
+    "browser_interaction": "not_verified",
+    "current_local_redesign": "requires_separate_publish_and_verification"
+  },
+  "external_resources": [
+    {
+      "url": "https://api.star-history.com/svg?repos=FBddcz/Embodied-SuperMimic&type=Date",
+      "purpose": "Requested public repository Star History image",
+      "hash_scope": "External dynamic image; excluded from local hashes and inventory",
+      "refresh": "Controlled by service and caches, not guaranteed real-time"
+    },
+    {
+      "url": "https://img.shields.io/github/stars/FBddcz/Embodied-SuperMimic?style=for-the-badge&color=1f5bc4",
+      "purpose": "Requested dynamic public GitHub Stars badge",
+      "hash_scope": "External service image; excluded from local hashes and inventory"
+    },
+    {
+      "url": "https://img.shields.io/badge/LIVE_DEMO-打开实验展示-1f5bc4?style=for-the-badge",
+      "purpose": "Live Demo navigation badge",
+      "hash_scope": "External service image; excluded from local hashes and inventory"
+    }
+  ]
 }

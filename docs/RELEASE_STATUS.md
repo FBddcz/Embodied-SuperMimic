@@ -1,6 +1,8 @@
 # Release status
 
-Snapshot: November 4, 2026. **Website-only research preview; publication approved, remote deployment not verified in this snapshot.** No published project paper or full algorithm package is claimed. The release owner has confirmed creation of the public repository; content publication, commits, push and Pages verification remain separate publisher actions.
+Snapshot: November 4, 2026. **Website-only research preview, deployed to GitHub Pages.** The publisher verified the public repository and deployment of commit `243bb861ee76caf0695fc070b6572fb19a3a2389` at https://fbddcz.github.io/Embodied-SuperMimic/ : HTTPS index, CSS/JS, the three long-video hashes and HTTP Range 206. Browser interaction and mobile layout were not verified because the preview safety classifier was unavailable.
+
+The reader-first Chinese README/site redesign is a subsequent local update; its publication must be verified separately. It retains the same experimental results and local media. No project paper or full algorithm package is published.
 
 ## Protocol migration
 
@@ -23,12 +25,12 @@ Existing project-generated local simulation media remain in the whitelist as non
 
 Original third-party notices are preserved. ShapeNet mug provenance and published terms are explicitly attributed in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md). A code license is not blanket media/model permission; the preview makes no general rights-clearance or downstream commercial-use claim. No third-party reference video is bundled. Raw model/database redistribution is not authorized as part of this website release. Any concrete asset-specific restriction identified before publication must be resolved or the affected item omitted by the release owner.
 
-## Release gates owned by the publisher
+## Checks for subsequent updates
 
 1. Review the exact public file allowlist and stage all approved edits; do not publish the stale pre-audit index or any experimental working tree.
 2. Run `python3 scripts/check_site.py`, JS/Python syntax checks, preview-server unit tests and desktop/mobile player checks. Hashes and byte counts in `site/release-manifest.json` must match the final files.
 3. Resolve any failed checks or concrete rights issue. Preserve license originals and all required attribution.
-4. Publish approved contents to the created public repository and configure Pages only after review. The workflow deploys **only `site/`**, on `main`; this preparation branch alone does not deploy.
+4. Publish approved contents to the created public repository and configure Pages only after review. The workflow deploys **only `site/`**, on `main`; local uncommitted edits do not deploy.
 5. Verify the actual HTTPS page, project subpath, CSS/JS, all gallery media, seeking/Range and mobile layout. Record the real commit, URL and deployment outcome after success; a planned URL is not an acceptance result.
 
-No remote publication is performed by the local audit. Browser checks, if run, are local preview checks, not proof of GitHub Pages deployment. A future algorithm/model/data release has separate provenance and reproducibility gates in [REPRODUCIBILITY.md](REPRODUCIBILITY.md).
+The local redesign does not itself commit, push or deploy any update. Browser checks, if run, are local preview checks, not proof of GitHub Pages deployment. A future algorithm/model/data release has separate provenance and reproducibility gates in [REPRODUCIBILITY.md](REPRODUCIBILITY.md).

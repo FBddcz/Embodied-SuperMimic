@@ -1,0 +1,302 @@
+{
+  "release": "research-preview-2026-11-04",
+  "assets": [
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "index.html",
+      "bytes": 25327,
+      "sha256": "79ad60ee6139a5dd359df9b6d24c67f5436d7173eb3f1c817931333e1e927f77"
+    },
+    {
+      "path": "static/css/gallery.css",
+      "bytes": 6346,
+      "sha256": "1b4cca531993ddb8a22d86d45f1d73a3374bd7003438492dc633615ecbe44976"
+    },
+    {
+      "path": "static/css/index.css",
+      "bytes": 26882,
+      "sha256": "80427612ed59b9cdf0c3ae118c54c01a6a319d42a24961d02fe4c4d579759610"
+    },
+    {
+      "path": "static/img/piper/piper_matrix.png",
+      "bytes": 41144,
+      "sha256": "c2713447d5c83c1632842e0ef837b224cd4129a09c5e667df0537e70f6647486"
+    },
+    {
+      "path": "static/img/ur5e/ur5e_matrix.png",
+      "bytes": 53291,
+      "sha256": "d3f56f40d54f08a8dced2ffadf636c0549eaf6b8cd9d3e28040d4a8d61581363"
+    },
+    {
+      "path": "static/img/xarm7/xarm7_matrix.png",
+      "bytes": 50923,
+      "sha256": "87e76ffb804e9062b433d57b7b78fa983a47daeede3a0cd1301eebf87d4b10bc"
+    },
+    {
+      "path": "static/js/gallery.js",
+      "bytes": 10186,
+      "sha256": "2470f5c6cfbd00705789cf56834f90900c6cefaeb88bab5fb657854d60d3a07b"
+    },
+    {
+      "path": "static/videos/hero_robots.mp4",
+      "bytes": 95499,
+      "sha256": "d4109c235ede27201063d64fb749186e4fe196a72d73404bf8b0d57fe025ef05"
+    },
+    {
+      "path": "static/videos/hero_robots_poster.jpg",
+      "bytes": 17496,
+      "sha256": "f0cf377ac9e78f26b4cff4c3f21669908f0b45b46d98cc03880ea45e1723c352"
+    },
+    {
+      "path": "static/videos/rollouts/arx5/mug_hang/teacher.jpg",
+      "bytes": 27830,
+      "sha256": "6f4bb1228c2d672e5ded9b5200a502f0f79be084d072917160b96080bfa6ad70"
+    },
+    {
+      "path": "static/videos/rollouts/arx5/mug_hang/teacher.mp4",
+      "bytes": 87460,
+      "sha256": "c8f2f97c85cdbe993f138847b5d7325ed19196ffc287ccb022eb0df5cb7103f3"
+    },
+    {
+      "path": "static/videos/rollouts/panda/mug_hang/panda_mug_teacher_s0.jpg",
+      "bytes": 39766,
+      "sha256": "550e4f0b635bd8983ffd0de191d6569c5484ff37523a71d93c7b9ab6c5e1cfc2"
+    },
+    {
+      "path": "static/videos/rollouts/panda/mug_hang/panda_mug_teacher_s0.mp4",
+      "bytes": 283566,
+      "sha256": "40c76ef14e792fa4a57e7b1e3907b62fe015a77e97f6add6175cffeaa9f8e7e8"
+    },
+    {
+      "path": "static/videos/rollouts/panda/mug_hang/panda_mug_v7_bc_init.jpg",
+      "bytes": 40100,
+      "sha256": "1ccab662fd779740a53bc11c04502dbb8de603c4f9d7e7017d5aeb59b5e78fff"
+    },
+    {
+      "path": "static/videos/rollouts/panda/mug_hang/panda_mug_v7_bc_init.mp4",
+      "bytes": 317919,
+      "sha256": "46093a50740a7c916cd58a47ee1cd21ed03c7084aef3273da4ba8303a863ea5e"
+    },
+    {
+      "path": "static/videos/rollouts/panda/mug_hang/panda_mug_v7_final.jpg",
+      "bytes": 39968,
+      "sha256": "244d7e5b1422357be87fc2775cdeb84a2abfef6d6039616f305ff6750c470b50"
+    },
+    {
+      "path": "static/videos/rollouts/panda/mug_hang/panda_mug_v7_final.mp4",
+      "bytes": 235964,
+      "sha256": "f83dae8cea1ddb01ceea5cfaa321d722c44b51ac2a6c6422252d8d96dc7eaa39"
+    },
+    {
+      "path": "static/videos/rollouts/panda/mug_hang/teacher_hud.jpg",
+      "bytes": 48718,
+      "sha256": "89339bb0723148c47253b620acb62f4a97e4c6c593a992d4d1b05166ea5633e4"
+    },
+    {
+      "path": "static/videos/rollouts/panda/mug_hang/teacher_hud.mp4",
+      "bytes": 358906,
+      "sha256": "d88b8fc9f76f371acdcd3bcad0bfae1faece3ba1039d35b86d81ca7887c4d678"
+    },
+    {
+      "path": "static/videos/rollouts/piper/lemon/teacher_hud.jpg",
+      "bytes": 35317,
+      "sha256": "ccb14403ad5f0e2e4f31a83c2ff8ba281dbd7694f37cb3a3424b3c231ed2dcb9"
+    },
+    {
+      "path": "static/videos/rollouts/piper/lemon/teacher_hud.mp4",
+      "bytes": 196732,
+      "sha256": "cce8f6a153c6a0a43f49256909997d1deb1153047eaaf74cf61e4a6c49b7b029"
+    },
+    {
+      "path": "static/videos/rollouts/piper/mug_hang/verified_20261104/teacher_hud.jpg",
+      "bytes": 41297,
+      "sha256": "373f47f623f36d6afbf862805ac002119bbf4e4c7d2472750bd63e4965f02c30"
+    },
+    {
+      "path": "static/videos/rollouts/piper/mug_hang/verified_20261104/teacher_hud.mp4",
+      "bytes": 286249,
+      "sha256": "ee854830ad0d7bfa9a3198bb26a2c12eb2ad53e25597b9c6a631c0f72377c946"
+    },
+    {
+      "path": "static/videos/rollouts/ur5e/mug_hang/verified_20261104/teacher_hud.jpg",
+      "bytes": 41505,
+      "sha256": "5537b3f2658770eef6f6249e7c7105fbf34f2193d65d56a043ac0c477312e2f0"
+    },
+    {
+      "path": "static/videos/rollouts/ur5e/mug_hang/verified_20261104/teacher_hud.mp4",
+      "bytes": 476055,
+      "sha256": "d8d724f5ff3ef89c6a5b73b4d881c412bb893702f69b77ad28ea92b37f5277f2"
+    },
+    {
+      "path": "static/videos/rollouts/xarm7/mug_hang/verified_20261104/teacher_hud.jpg",
+      "bytes": 41203,
+      "sha256": "1a5e82bdbae410b1d1f805d40c0ae6d55159c068b5be38e3549f7df323a4d334"
+    },
+    {
+      "path": "static/videos/rollouts/xarm7/mug_hang/verified_20261104/teacher_hud.mp4",
+      "bytes": 360793,
+      "sha256": "21ccc8385d50dbdd05c48944ce12f9b40d857d40f66801608f481d179da36c52"
+    },
+    {
+      "path": "static/videos/teaser.jpg",
+      "bytes": 36132,
+      "sha256": "31cf1a57476beef24727f5dfa4c3ab0e3496ac0b3ee0660bdf1508d0f4762499"
+    },
+    {
+      "path": "static/videos/teaser.mp4",
+      "bytes": 922487,
+      "sha256": "8fc5c6559e6f60c16be68402938619fc51f158a2b92e3291e754b378d1f10bdf"
+    }
+  ],
+  "schema": "embodied-supermimic.website-release/2",
+  "public_metadata": [
+    {
+      "path": ".github/workflows/pages.yml",
+      "bytes": 1461,
+      "sha256": "3b91cd698a5d12509a180168f40409641fdf38887a84a65684dc5b62937140e9"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 123,
+      "sha256": "7e1769144510ea4702c5a9295d2cea035e7b57a090e5b208daedf399371b1174"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 1579,
+      "sha256": "fda7fa3222ec362ca35df7daa656acac31392121e93e6be2235fef6ec57d4f81"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1191,
+      "sha256": "ed93a942659a654f0ebcae3a45c3527fb24162f7bf760b473f536b239b328e10"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6581,
+      "sha256": "6ebdde9ed1c0c811c5014cbc603614644c4600cc2e285a164205c1df04c42f40"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 4563,
+      "sha256": "9e49d8f123eb33de0e34dbd616b93cf8e173870dca2338a3b04202df3b8ad0a4"
+    },
+    {
+      "path": "docs/EXPERIMENTS.md",
+      "bytes": 11985,
+      "sha256": "7a5d4dc915f38ead4dd71b053dc566eea8d6c48ed076eda91460fa8f6dc0c1bf"
+    },
+    {
+      "path": "docs/QUICKSTART.md",
+      "bytes": 2388,
+      "sha256": "29a3eb04fc44612fcf881962d35dab3291f9e128670bb3611ac0918cb13f5102"
+    },
+    {
+      "path": "docs/RELEASE_STATUS.md",
+      "bytes": 4320,
+      "sha256": "86f2cc1dc9f07b375b08e45f68ddf1a51a3e05a9ce160d068c2b5de9425dfa4a"
+    },
+    {
+      "path": "docs/REPRODUCIBILITY.md",
+      "bytes": 2944,
+      "sha256": "7343807d9f1a5a13bcd8c263bd23983c01203631396d9d1dfce59995590d84e5"
+    },
+    {
+      "path": "licenses/panda-Apache-2.0.txt",
+      "bytes": 10173,
+      "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9"
+    },
+    {
+      "path": "licenses/piper-MIT.txt",
+      "bytes": 1065,
+      "sha256": "e32d78fd3761052ab0b2bb42fef8a7a9ad3f298d315d305333c349d2aff1f134"
+    },
+    {
+      "path": "licenses/robosuite.txt",
+      "bytes": 1472,
+      "sha256": "81b17330326a315c2a87be8ed5ff7fcff76c56283db5577bd2c7df474fcdb8d8"
+    },
+    {
+      "path": "licenses/robotiq-BSD.txt",
+      "bytes": 1297,
+      "sha256": "3d5edd18d1e22a17666e9bb84270171ed5ac90b192d24e0177fd171708ea2316"
+    },
+    {
+      "path": "licenses/upstream-manipulation-MIT.txt",
+      "bytes": 1067,
+      "sha256": "3257c2c4ef370d3ee50bf2e6a8db512c4bf6217643990f91a7273d716485d9e6"
+    },
+    {
+      "path": "licenses/ur5e-BSD.txt",
+      "bytes": 1470,
+      "sha256": "5ec71ccf66c8d03261448f2441a586765b97f2248c860a1ae19689fb1c45cee6"
+    },
+    {
+      "path": "licenses/xarm7-BSD-3-Clause.txt",
+      "bytes": 1522,
+      "sha256": "4fe659325706d0fc41592c8743d085a0bdf778056249f2a108943d22be916fb2"
+    },
+    {
+      "path": "results/mainline.json",
+      "bytes": 30933,
+      "sha256": "480c7f90012c146273a11d10094bd13dcb065fa064a5168a2dd48e21baaf57b0"
+    },
+    {
+      "path": "scripts/check_site.py",
+      "bytes": 10172,
+      "sha256": "c3374a0ddede749bd32cdd266477fdd2b94bbe4c6c651b35b61436b2dd3a7ad6"
+    },
+    {
+      "path": "scripts/serve.py",
+      "bytes": 3579,
+      "sha256": "d78de0599b219b8934bfe2dff9bab7d312424c3b89817247acf963b2869704ef"
+    },
+    {
+      "path": "scripts/test_preview.py",
+      "bytes": 2276,
+      "sha256": "b4953f3f1e41623ba5891ec31b407486a20971fcfc874d7ab84909fbacf6e13b"
+    }
+  ],
+  "hash_scope": "All public files except this manifest; asset paths relative to site, public_metadata paths relative to repository root. Archived evaluation hashes are identifiers, not reverified raw files.",
+  "protocol_status": {
+    "numeric_results": "legacy_reset_v0",
+    "home_fulltask_v1": "approved_implementation_in_progress_not_frozen_no_new_scores",
+    "home_jitter_v1": "planned_no_scores"
+  },
+  "publication_status": "approved_pending_remote_verification",
+  "media_scope": "Existing project-generated noncommercial simulation illustrations; not redistributed reference-project videos or raw models. Third-party rights are not relicensed under MIT; see THIRD_PARTY_NOTICES.md.",
+  "media_timing": {
+    "legacy_montages": [
+      "static/videos/hero_robots.mp4",
+      "static/videos/teaser.mp4"
+    ],
+    "real_time_teacher_clips": {
+      "static/videos/rollouts/piper/mug_hang/verified_20261104/teacher_hud.mp4": {
+        "seconds": 6.45,
+        "fps": 20
+      },
+      "static/videos/rollouts/ur5e/mug_hang/verified_20261104/teacher_hud.mp4": {
+        "seconds": 8.95,
+        "fps": 20
+      },
+      "static/videos/rollouts/xarm7/mug_hang/verified_20261104/teacher_hud.mp4": {
+        "seconds": 8.4,
+        "fps": 20
+      }
+    },
+    "other_clips": "legacy_capture_timing_not_corrected",
+    "start_scope": "Selected legacy episodes; no new HOME footage; retained approach does not establish ungrasped type-0 start."
+  },
+  "inventory": {
+    "public_file_count_including_manifest": 52,
+    "hashed_file_count": 51,
+    "hashed_file_bytes_excluding_manifest": 4347222,
+    "media_file_count": 25,
+    "video_file_count": 11,
+    "image_file_count": 14,
+    "media_bytes": 4176320
+  }
+}

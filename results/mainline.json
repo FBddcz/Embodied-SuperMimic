@@ -1,0 +1,962 @@
+{
+  "schema": "embodied-supermimic.website-results/2",
+  "snapshot_date": "2026-11-04",
+  "formal_teacher_cells": 8,
+  "target_teacher_cells": 25,
+  "same_robot_five_task_training": "not_started",
+  "note": "All numeric scores are historical legacy_reset_v0 mixed reset-bank results, not HOME full-task scores. Archived evaluation hashes are preserved but raw source files are not bundled. Cross-robot reset distributions and configurations differ.",
+  "evaluations": [
+    {
+      "robot": "panda",
+      "task": "mug_hang",
+      "method": "teacher",
+      "run_id": "panda_mug_hang_s0",
+      "checkpoint_iteration_label": 4000,
+      "training_seed": 0,
+      "episodes": 256,
+      "successes": 203,
+      "success_percent": 79.296875,
+      "per_reset_category": {
+        "0": {
+          "episodes": 64,
+          "successes": 28,
+          "success_percent": 43.75
+        },
+        "1": {
+          "episodes": 64,
+          "successes": 58,
+          "success_percent": 90.625
+        },
+        "2": {
+          "episodes": 64,
+          "successes": 53,
+          "success_percent": 82.8125
+        },
+        "3": {
+          "episodes": 64,
+          "successes": 64,
+          "success_percent": 100.0
+        }
+      },
+      "protocol": {
+        "seeds": [
+          100000
+        ],
+        "num_envs": 64,
+        "episodes_per_type_per_seed": 64,
+        "split_label": "held_out",
+        "policy_mode": "deterministic",
+        "observation_noise": false,
+        "startup_randomization": true,
+        "control_dt": 0.05,
+        "actor_history_frames": 5,
+        "actor_history_oldest_to_current_seconds": 0.2,
+        "finite_horizon": true,
+        "protocol_id": "legacy_reset_v0"
+      },
+      "evaluation_sha256": "6d041ac29a43ff2a4753f3eeaf2a889011a52a56c68562fca091380103a6087b",
+      "protocol_id": "legacy_reset_v0",
+      "metric_scope": "mixed_reset_bank"
+    },
+    {
+      "robot": "arx5",
+      "task": "mug_hang",
+      "method": "teacher",
+      "run_id": "arx5_mug_hang_s0",
+      "checkpoint_iteration_label": 4000,
+      "training_seed": 0,
+      "episodes": 256,
+      "successes": 250,
+      "success_percent": 97.65625,
+      "per_reset_category": {
+        "0": {
+          "episodes": 64,
+          "successes": 59,
+          "success_percent": 92.1875
+        },
+        "1": {
+          "episodes": 64,
+          "successes": 64,
+          "success_percent": 100.0
+        },
+        "2": {
+          "episodes": 64,
+          "successes": 63,
+          "success_percent": 98.4375
+        },
+        "3": {
+          "episodes": 64,
+          "successes": 64,
+          "success_percent": 100.0
+        }
+      },
+      "protocol": {
+        "seeds": [
+          100000
+        ],
+        "num_envs": 64,
+        "episodes_per_type_per_seed": 64,
+        "split_label": "held_out",
+        "policy_mode": "deterministic",
+        "observation_noise": false,
+        "startup_randomization": true,
+        "control_dt": 0.05,
+        "actor_history_frames": 5,
+        "actor_history_oldest_to_current_seconds": 0.2,
+        "finite_horizon": true,
+        "protocol_id": "legacy_reset_v0"
+      },
+      "evaluation_sha256": "10d2e272483a288788f423d5382928361e39dddac851a3662a8ccc803b2d8dc1",
+      "protocol_id": "legacy_reset_v0",
+      "metric_scope": "mixed_reset_bank"
+    },
+    {
+      "robot": "piper",
+      "task": "mug_hang",
+      "method": "teacher",
+      "run_id": "piper_mug_hang_s0",
+      "checkpoint_iteration_label": 4000,
+      "training_seed": 0,
+      "episodes": 256,
+      "successes": 118,
+      "success_percent": 46.09375,
+      "per_reset_category": {
+        "0": {
+          "episodes": 64,
+          "successes": 11,
+          "success_percent": 17.1875
+        },
+        "1": {
+          "episodes": 64,
+          "successes": 26,
+          "success_percent": 40.625
+        },
+        "2": {
+          "episodes": 64,
+          "successes": 17,
+          "success_percent": 26.5625
+        },
+        "3": {
+          "episodes": 64,
+          "successes": 64,
+          "success_percent": 100.0
+        }
+      },
+      "protocol": {
+        "seeds": [
+          100000
+        ],
+        "num_envs": 64,
+        "episodes_per_type_per_seed": 64,
+        "split_label": "held_out",
+        "policy_mode": "deterministic",
+        "observation_noise": false,
+        "startup_randomization": true,
+        "control_dt": 0.05,
+        "actor_history_frames": 5,
+        "actor_history_oldest_to_current_seconds": 0.2,
+        "finite_horizon": true,
+        "protocol_id": "legacy_reset_v0"
+      },
+      "evaluation_sha256": "15e48679bc132983de4fcc0a9f87079eca3cde52c10a4a9566f8b7301fc5d0d2",
+      "protocol_id": "legacy_reset_v0",
+      "metric_scope": "mixed_reset_bank"
+    },
+    {
+      "robot": "piper",
+      "task": "mug_hang",
+      "method": "v7",
+      "run_id": "dyna_v7_piper",
+      "checkpoint_iteration_label": 1000,
+      "training_seed": 0,
+      "episodes": 256,
+      "successes": 106,
+      "success_percent": 41.40625,
+      "per_reset_category": {
+        "0": {
+          "episodes": 64,
+          "successes": 7,
+          "success_percent": 10.9375
+        },
+        "1": {
+          "episodes": 64,
+          "successes": 18,
+          "success_percent": 28.125
+        },
+        "2": {
+          "episodes": 64,
+          "successes": 17,
+          "success_percent": 26.5625
+        },
+        "3": {
+          "episodes": 64,
+          "successes": 64,
+          "success_percent": 100.0
+        }
+      },
+      "protocol": {
+        "seeds": [
+          100000
+        ],
+        "num_envs": 64,
+        "episodes_per_type_per_seed": 64,
+        "split_label": "held_out",
+        "policy_mode": "deterministic",
+        "observation_noise": false,
+        "startup_randomization": true,
+        "control_dt": 0.05,
+        "actor_history_frames": 5,
+        "actor_history_oldest_to_current_seconds": 0.2,
+        "finite_horizon": true,
+        "protocol_id": "legacy_reset_v0"
+      },
+      "evaluation_sha256": "c0b1023bd9b66ca656ec9dd5d3b8398f4478cc6007978cd8f87ceeec93b4a204",
+      "protocol_id": "legacy_reset_v0",
+      "metric_scope": "mixed_reset_bank",
+      "budget": {
+        "initialization_iteration_offset": 1000,
+        "additional_online_iterations": 0,
+        "teacher_pretraining_included_in_label": false,
+        "bc_cost_separate": true,
+        "teacher_world_model_and_critic_initialization": true
+      }
+    },
+    {
+      "robot": "piper",
+      "task": "mug_hang",
+      "method": "v7",
+      "run_id": "dyna_v7_piper",
+      "checkpoint_iteration_label": 3000,
+      "training_seed": 0,
+      "episodes": 256,
+      "successes": 220,
+      "success_percent": 85.9375,
+      "per_reset_category": {
+        "0": {
+          "episodes": 64,
+          "successes": 54,
+          "success_percent": 84.375
+        },
+        "1": {
+          "episodes": 64,
+          "successes": 48,
+          "success_percent": 75.0
+        },
+        "2": {
+          "episodes": 64,
+          "successes": 54,
+          "success_percent": 84.375
+        },
+        "3": {
+          "episodes": 64,
+          "successes": 64,
+          "success_percent": 100.0
+        }
+      },
+      "protocol": {
+        "seeds": [
+          100000
+        ],
+        "num_envs": 64,
+        "episodes_per_type_per_seed": 64,
+        "split_label": "held_out",
+        "policy_mode": "deterministic",
+        "observation_noise": false,
+        "startup_randomization": true,
+        "control_dt": 0.05,
+        "actor_history_frames": 5,
+        "actor_history_oldest_to_current_seconds": 0.2,
+        "finite_horizon": true,
+        "protocol_id": "legacy_reset_v0"
+      },
+      "evaluation_sha256": "d091a0e832fa9992ec0e28fe628fb4463850c2396f152727274d96948688513a",
+      "protocol_id": "legacy_reset_v0",
+      "metric_scope": "mixed_reset_bank",
+      "budget": {
+        "initialization_iteration_offset": 1000,
+        "additional_online_iterations": 2000,
+        "teacher_pretraining_included_in_label": false,
+        "bc_cost_separate": true,
+        "teacher_world_model_and_critic_initialization": true
+      }
+    },
+    {
+      "robot": "piper",
+      "task": "mug_hang",
+      "method": "v7",
+      "run_id": "dyna_v7_piper",
+      "checkpoint_iteration_label": 4000,
+      "training_seed": 0,
+      "episodes": 256,
+      "successes": 238,
+      "success_percent": 92.96875,
+      "per_reset_category": {
+        "0": {
+          "episodes": 64,
+          "successes": 58,
+          "success_percent": 90.625
+        },
+        "1": {
+          "episodes": 64,
+          "successes": 59,
+          "success_percent": 92.1875
+        },
+        "2": {
+          "episodes": 64,
+          "successes": 57,
+          "success_percent": 89.0625
+        },
+        "3": {
+          "episodes": 64,
+          "successes": 64,
+          "success_percent": 100.0
+        }
+      },
+      "protocol": {
+        "seeds": [
+          100000
+        ],
+        "num_envs": 64,
+        "episodes_per_type_per_seed": 64,
+        "split_label": "held_out",
+        "policy_mode": "deterministic",
+        "observation_noise": false,
+        "startup_randomization": true,
+        "control_dt": 0.05,
+        "actor_history_frames": 5,
+        "actor_history_oldest_to_current_seconds": 0.2,
+        "finite_horizon": true,
+        "protocol_id": "legacy_reset_v0"
+      },
+      "evaluation_sha256": "992d97a37ed856acb6643cc813b3fe26fb258d05e8755dc61a51d533882b986e",
+      "protocol_id": "legacy_reset_v0",
+      "metric_scope": "mixed_reset_bank",
+      "budget": {
+        "initialization_iteration_offset": 1000,
+        "additional_online_iterations": 3000,
+        "teacher_pretraining_included_in_label": false,
+        "bc_cost_separate": true,
+        "teacher_world_model_and_critic_initialization": true
+      }
+    },
+    {
+      "robot": "ur5e",
+      "task": "mug_hang",
+      "method": "teacher",
+      "run_id": "ur5e_mug_hang_s0",
+      "checkpoint_iteration_label": 4000,
+      "training_seed": 0,
+      "episodes": 256,
+      "successes": 160,
+      "success_percent": 62.5,
+      "per_reset_category": {
+        "0": {
+          "episodes": 64,
+          "successes": 0,
+          "success_percent": 0.0
+        },
+        "1": {
+          "episodes": 64,
+          "successes": 53,
+          "success_percent": 82.8125
+        },
+        "2": {
+          "episodes": 64,
+          "successes": 43,
+          "success_percent": 67.1875
+        },
+        "3": {
+          "episodes": 64,
+          "successes": 64,
+          "success_percent": 100.0
+        }
+      },
+      "protocol": {
+        "seeds": [
+          100000
+        ],
+        "num_envs": 64,
+        "episodes_per_type_per_seed": 64,
+        "split_label": "held_out",
+        "policy_mode": "deterministic",
+        "observation_noise": false,
+        "startup_randomization": true,
+        "control_dt": 0.05,
+        "actor_history_frames": 5,
+        "actor_history_oldest_to_current_seconds": 0.2,
+        "finite_horizon": true,
+        "protocol_id": "legacy_reset_v0"
+      },
+      "evaluation_sha256": "e2d618940c4ab56f1282c662f2035d2373534f616e4d944cbc61fdacd38e7422",
+      "protocol_id": "legacy_reset_v0",
+      "metric_scope": "mixed_reset_bank"
+    },
+    {
+      "robot": "ur5e",
+      "task": "mug_hang",
+      "method": "v7",
+      "run_id": "dyna_v7_ur5e",
+      "checkpoint_iteration_label": 1000,
+      "training_seed": 0,
+      "episodes": 256,
+      "successes": 149,
+      "success_percent": 58.203125,
+      "per_reset_category": {
+        "0": {
+          "episodes": 64,
+          "successes": 0,
+          "success_percent": 0.0
+        },
+        "1": {
+          "episodes": 64,
+          "successes": 42,
+          "success_percent": 65.625
+        },
+        "2": {
+          "episodes": 64,
+          "successes": 43,
+          "success_percent": 67.1875
+        },
+        "3": {
+          "episodes": 64,
+          "successes": 64,
+          "success_percent": 100.0
+        }
+      },
+      "protocol": {
+        "seeds": [
+          100000
+        ],
+        "num_envs": 64,
+        "episodes_per_type_per_seed": 64,
+        "split_label": "held_out",
+        "policy_mode": "deterministic",
+        "observation_noise": false,
+        "startup_randomization": true,
+        "control_dt": 0.05,
+        "actor_history_frames": 5,
+        "actor_history_oldest_to_current_seconds": 0.2,
+        "finite_horizon": true,
+        "protocol_id": "legacy_reset_v0"
+      },
+      "evaluation_sha256": "f66fd44b5e59780da625bb750ae3bd5880843e769d88c23393ad237683f6996e",
+      "protocol_id": "legacy_reset_v0",
+      "metric_scope": "mixed_reset_bank",
+      "budget": {
+        "initialization_iteration_offset": 1000,
+        "additional_online_iterations": 0,
+        "teacher_pretraining_included_in_label": false,
+        "bc_cost_separate": true,
+        "teacher_world_model_and_critic_initialization": true
+      }
+    },
+    {
+      "robot": "ur5e",
+      "task": "mug_hang",
+      "method": "v7",
+      "run_id": "dyna_v7_ur5e",
+      "checkpoint_iteration_label": 3000,
+      "training_seed": 0,
+      "episodes": 256,
+      "successes": 176,
+      "success_percent": 68.75,
+      "per_reset_category": {
+        "0": {
+          "episodes": 64,
+          "successes": 0,
+          "success_percent": 0.0
+        },
+        "1": {
+          "episodes": 64,
+          "successes": 56,
+          "success_percent": 87.5
+        },
+        "2": {
+          "episodes": 64,
+          "successes": 56,
+          "success_percent": 87.5
+        },
+        "3": {
+          "episodes": 64,
+          "successes": 64,
+          "success_percent": 100.0
+        }
+      },
+      "protocol": {
+        "seeds": [
+          100000
+        ],
+        "num_envs": 64,
+        "episodes_per_type_per_seed": 64,
+        "split_label": "held_out",
+        "policy_mode": "deterministic",
+        "observation_noise": false,
+        "startup_randomization": true,
+        "control_dt": 0.05,
+        "actor_history_frames": 5,
+        "actor_history_oldest_to_current_seconds": 0.2,
+        "finite_horizon": true,
+        "protocol_id": "legacy_reset_v0"
+      },
+      "evaluation_sha256": "f53b1daaf6c22b2fe770dd3c19b2a5ca11cf0ad4f9fc4867ffdd7d9c31b83212",
+      "protocol_id": "legacy_reset_v0",
+      "metric_scope": "mixed_reset_bank",
+      "budget": {
+        "initialization_iteration_offset": 1000,
+        "additional_online_iterations": 2000,
+        "teacher_pretraining_included_in_label": false,
+        "bc_cost_separate": true,
+        "teacher_world_model_and_critic_initialization": true
+      }
+    },
+    {
+      "robot": "ur5e",
+      "task": "mug_hang",
+      "method": "v7",
+      "run_id": "dyna_v7_ur5e",
+      "checkpoint_iteration_label": 4000,
+      "training_seed": 0,
+      "episodes": 256,
+      "successes": 179,
+      "success_percent": 69.921875,
+      "per_reset_category": {
+        "0": {
+          "episodes": 64,
+          "successes": 0,
+          "success_percent": 0.0
+        },
+        "1": {
+          "episodes": 64,
+          "successes": 57,
+          "success_percent": 89.0625
+        },
+        "2": {
+          "episodes": 64,
+          "successes": 58,
+          "success_percent": 90.625
+        },
+        "3": {
+          "episodes": 64,
+          "successes": 64,
+          "success_percent": 100.0
+        }
+      },
+      "protocol": {
+        "seeds": [
+          100000
+        ],
+        "num_envs": 64,
+        "episodes_per_type_per_seed": 64,
+        "split_label": "held_out",
+        "policy_mode": "deterministic",
+        "observation_noise": false,
+        "startup_randomization": true,
+        "control_dt": 0.05,
+        "actor_history_frames": 5,
+        "actor_history_oldest_to_current_seconds": 0.2,
+        "finite_horizon": true,
+        "protocol_id": "legacy_reset_v0"
+      },
+      "evaluation_sha256": "feba7efb52888b8a48c1b710a4e15bbdae9876f8d794718c83008859f68a0ecf",
+      "protocol_id": "legacy_reset_v0",
+      "metric_scope": "mixed_reset_bank",
+      "budget": {
+        "initialization_iteration_offset": 1000,
+        "additional_online_iterations": 3000,
+        "teacher_pretraining_included_in_label": false,
+        "bc_cost_separate": true,
+        "teacher_world_model_and_critic_initialization": true
+      }
+    },
+    {
+      "robot": "xarm7",
+      "task": "mug_hang",
+      "method": "teacher",
+      "run_id": "xarm7_mug_hang_s0",
+      "checkpoint_iteration_label": 4000,
+      "training_seed": 0,
+      "episodes": 256,
+      "successes": 119,
+      "success_percent": 46.484375,
+      "per_reset_category": {
+        "0": {
+          "episodes": 64,
+          "successes": 0,
+          "success_percent": 0.0
+        },
+        "1": {
+          "episodes": 64,
+          "successes": 32,
+          "success_percent": 50.0
+        },
+        "2": {
+          "episodes": 64,
+          "successes": 25,
+          "success_percent": 39.0625
+        },
+        "3": {
+          "episodes": 64,
+          "successes": 62,
+          "success_percent": 96.875
+        }
+      },
+      "protocol": {
+        "seeds": [
+          100000
+        ],
+        "num_envs": 64,
+        "episodes_per_type_per_seed": 64,
+        "split_label": "held_out",
+        "policy_mode": "deterministic",
+        "observation_noise": false,
+        "startup_randomization": true,
+        "control_dt": 0.05,
+        "actor_history_frames": 5,
+        "actor_history_oldest_to_current_seconds": 0.2,
+        "finite_horizon": true,
+        "protocol_id": "legacy_reset_v0"
+      },
+      "evaluation_sha256": "f83579aeefb0190f9096c4b3bee3bb298b8964ffa4c42ea14601e4e3c1668358",
+      "protocol_id": "legacy_reset_v0",
+      "metric_scope": "mixed_reset_bank"
+    }
+  ],
+  "historical_multiseed_summary": [
+    {
+      "robot": "panda",
+      "task": "mug_hang",
+      "method": "v7",
+      "iteration_label": 3000,
+      "mean_percent": 87.1,
+      "std_percent": 8.1,
+      "training_seeds": 3,
+      "protocol_id": "legacy_reset_v0",
+      "metric_scope": "mixed_reset_bank"
+    },
+    {
+      "robot": "arx5",
+      "task": "mug_hang",
+      "method": "v7",
+      "iteration_label": 3000,
+      "mean_percent": 98.1,
+      "std_percent": 1.4,
+      "training_seeds": 3,
+      "protocol_id": "legacy_reset_v0",
+      "metric_scope": "mixed_reset_bank"
+    }
+  ],
+  "development_validation": {
+    "panda/mug_hang": {
+      "contract_status": "passed",
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "evaluated_legacy",
+      "home_validation_status": "not_reported",
+      "readiness_status": "legacy_teacher_evaluated"
+    },
+    "arx5/mug_hang": {
+      "contract_status": "passed",
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "evaluated_legacy",
+      "home_validation_status": "not_reported",
+      "readiness_status": "legacy_teacher_evaluated"
+    },
+    "piper/mug_hang": {
+      "contract_status": "passed",
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "evaluated_legacy",
+      "home_validation_status": "not_reported",
+      "readiness_status": "legacy_teacher_evaluated"
+    },
+    "ur5e/mug_hang": {
+      "contract_status": "passed",
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "evaluated_legacy",
+      "home_validation_status": "not_reported",
+      "readiness_status": "legacy_teacher_evaluated"
+    },
+    "xarm7/mug_hang": {
+      "contract_status": "passed",
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "evaluated_legacy",
+      "home_validation_status": "not_reported",
+      "readiness_status": "legacy_teacher_evaluated"
+    },
+    "panda/lemon": {
+      "contract_status": "passed",
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "evaluated_legacy",
+      "home_validation_status": "not_reported",
+      "readiness_status": "legacy_teacher_evaluated"
+    },
+    "arx5/lemon": {
+      "contract_status": "passed",
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "evaluated_legacy",
+      "home_validation_status": "not_reported",
+      "readiness_status": "legacy_teacher_evaluated"
+    },
+    "piper/lemon": {
+      "contract_status": "passed",
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "evaluated_legacy",
+      "home_validation_status": "not_reported",
+      "readiness_status": "legacy_teacher_evaluated"
+    },
+    "ur5e/lemon": {
+      "contract_status": "passed",
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "not_completed",
+      "home_validation_status": "not_reported",
+      "readiness_status": "contract_only"
+    },
+    "xarm7/lemon": {
+      "contract_status": "passed",
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "not_completed",
+      "home_validation_status": "not_reported",
+      "readiness_status": "contract_only"
+    },
+    "panda/square": {
+      "contract_status": "passed",
+      "bank_probe_status": "passed",
+      "bank_probe_exit_code": 0,
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "not_completed",
+      "home_validation_status": "not_reported",
+      "readiness_status": "development_probe_passed_only"
+    },
+    "arx5/square": {
+      "contract_status": "passed",
+      "bank_probe_status": "passed",
+      "bank_probe_exit_code": 0,
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "not_completed",
+      "home_validation_status": "not_reported",
+      "readiness_status": "development_probe_passed_only"
+    },
+    "piper/square": {
+      "contract_status": "passed",
+      "bank_probe_status": "failed",
+      "bank_probe_exit_code": 1,
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "not_completed",
+      "home_validation_status": "not_reported",
+      "readiness_status": "blocked",
+      "blocked_reason": "Pre-grasp probe 0/3"
+    },
+    "ur5e/square": {
+      "contract_status": "passed",
+      "bank_probe_status": "passed",
+      "bank_probe_exit_code": 0,
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "not_completed",
+      "home_validation_status": "not_reported",
+      "readiness_status": "development_probe_passed_only"
+    },
+    "xarm7/square": {
+      "contract_status": "passed",
+      "bank_probe_status": "passed",
+      "bank_probe_exit_code": 0,
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "not_completed",
+      "home_validation_status": "not_reported",
+      "readiness_status": "development_probe_passed_only"
+    },
+    "panda/drawer": {
+      "contract_status": "passed",
+      "bank_probe_status": "failed",
+      "bank_probe_exit_code": 1,
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "not_completed",
+      "home_validation_status": "not_reported",
+      "readiness_status": "blocked",
+      "blocked_reason": "IK witness failed"
+    },
+    "arx5/drawer": {
+      "contract_status": "passed",
+      "bank_probe_status": "passed",
+      "bank_probe_exit_code": 0,
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "not_completed",
+      "home_validation_status": "not_reported",
+      "readiness_status": "development_probe_passed_only"
+    },
+    "piper/drawer": {
+      "contract_status": "passed",
+      "bank_probe_status": "failed",
+      "bank_probe_exit_code": 1,
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "not_completed",
+      "home_validation_status": "not_reported",
+      "readiness_status": "blocked",
+      "blocked_reason": "IK witness failed"
+    },
+    "ur5e/drawer": {
+      "contract_status": "passed",
+      "bank_probe_status": "failed",
+      "bank_probe_exit_code": 1,
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "not_completed",
+      "home_validation_status": "not_reported",
+      "readiness_status": "blocked",
+      "blocked_reason": "Collision, limit and grasp/lift checks failed"
+    },
+    "xarm7/drawer": {
+      "contract_status": "passed",
+      "bank_probe_status": "failed",
+      "bank_probe_exit_code": 1,
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "not_completed",
+      "home_validation_status": "not_reported",
+      "readiness_status": "blocked",
+      "blocked_reason": "Collision, limit and grasp/lift checks failed"
+    },
+    "panda/box_in_bin": {
+      "contract_status": "passed",
+      "bank_probe_status": "failed",
+      "bank_probe_exit_code": 1,
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "not_completed",
+      "home_validation_status": "not_reported",
+      "readiness_status": "blocked",
+      "blocked_reason": "Insufficient valid candidates"
+    },
+    "arx5/box_in_bin": {
+      "contract_status": "passed",
+      "bank_probe_status": "passed",
+      "bank_probe_exit_code": 0,
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "not_completed",
+      "home_validation_status": "not_reported",
+      "readiness_status": "development_probe_passed_only"
+    },
+    "piper/box_in_bin": {
+      "contract_status": "passed",
+      "bank_probe_status": "failed",
+      "bank_probe_exit_code": 1,
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "not_completed",
+      "home_validation_status": "not_reported",
+      "readiness_status": "blocked",
+      "blocked_reason": "Insufficient valid candidates"
+    },
+    "ur5e/box_in_bin": {
+      "contract_status": "passed",
+      "bank_probe_status": "failed",
+      "bank_probe_exit_code": 1,
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "not_completed",
+      "home_validation_status": "not_reported",
+      "readiness_status": "blocked",
+      "blocked_reason": "Insufficient valid candidates"
+    },
+    "xarm7/box_in_bin": {
+      "contract_status": "passed",
+      "bank_probe_status": "failed",
+      "bank_probe_exit_code": 1,
+      "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
+      "teacher_status": "not_completed",
+      "home_validation_status": "not_reported",
+      "readiness_status": "blocked",
+      "blocked_reason": "Insufficient valid candidates"
+    }
+  },
+  "release_scope": "website_only_research_preview",
+  "protocols": {
+    "legacy_reset_v0": {
+      "status": "historical_results_preserved",
+      "main_metric": "mixed_reset_bank_success",
+      "mug_hang_categories": {
+        "0": "ungrasped table start, broad random arm posture; posture-recovery stress test, not HOME",
+        "1": "already grasped on table",
+        "2": "already grasped in air",
+        "3": "already threaded"
+      },
+      "comparison_warning": "Do not pool intermediate-category means with HOME results."
+    },
+    "home_fulltask_v1": {
+      "authorization_status": "approved",
+      "implementation_status": "in_progress",
+      "frozen": false,
+      "result_status": "no_new_home_scores",
+      "evaluations": [],
+      "planned_design": {
+        "final_scenes_per_cell_per_training_seed": 512,
+        "development_scenes_per_cell": 256,
+        "training_full_start_scenes_per_cell": 10000,
+        "initial_training_seeds": 1,
+        "target_training_seeds": 3,
+        "baseline_total_iteration_label": 4000,
+        "status": "design_targets_pending_freeze_not_completed_experiments"
+      },
+      "start_definition": "Predeclared validated robot/task HOME independent of randomized scene; open empty gripper; no pre-grasp placement, teacher takeover or intermediate reset.",
+      "drawer_scope": "Place and close from a drawer preopened to 0.13 m; no opening action; process prefix reset to zero.",
+      "success_definition": "Preserve native criteria and time limits; all preregistered episodes remain in the denominator; failures and incomplete batches are explicit.",
+      "safety_scope": "Validated simulated start only, not full-path safety or real-robot certification."
+    },
+    "home_jitter_v1": {
+      "status": "planned_separate_appendix",
+      "result_status": "no_scores"
+    }
+  },
+  "historical_frozen_control_summary": [
+    {
+      "robot": "panda",
+      "task": "mug_hang",
+      "method": "frozen_world_model_control",
+      "protocol_id": "legacy_reset_v0",
+      "iteration_label": 3000,
+      "mean_percent": 38.4,
+      "std_percent": 7.9,
+      "completed_training_seeds": 3,
+      "attempted_training_seeds": 3
+    },
+    {
+      "robot": "arx5",
+      "task": "mug_hang",
+      "method": "frozen_world_model_control",
+      "protocol_id": "legacy_reset_v0",
+      "iteration_label": 3000,
+      "mean_percent": 39.8,
+      "std_percent": 12.7,
+      "completed_training_seeds": 2,
+      "attempted_training_seeds": 3,
+      "incomplete_reason": "One control run diverged; not included as a completed score."
+    }
+  ],
+  "reviewed_legacy_summary": [
+    {
+      "robot": "xarm7",
+      "task": "mug_hang",
+      "method": "v7",
+      "protocol_id": "legacy_reset_v0",
+      "training_seeds": 1,
+      "episodes_per_checkpoint": 256,
+      "reported_checkpoints": [
+        {
+          "checkpoint_iteration_label": 3000,
+          "reported_success_percent": 51.95
+        },
+        {
+          "checkpoint_iteration_label": 4000,
+          "reported_success_percent": 57.81,
+          "type_0": {
+            "episodes": 64,
+            "successes": 1
+          }
+        }
+      ],
+      "source_status": "Reviewed historical status summary; raw evaluation file, hash and full category breakdown not bundled.",
+      "initialization_iteration_offset": 1000,
+      "budget_note": "Teacher pretraining and BC costs separate; 3000/4000 labels represent different incremental budgets."
+    }
+  ],
+  "coverage_snapshot": {
+    "environment_contracts_passed": 25,
+    "formal_legacy_teacher_cells": 8,
+    "new_development_bank_probes": 15,
+    "development_bank_probes_passed": 6,
+    "development_bank_probes_failed": 9,
+    "note": "Historical snapshot, not completed HOME validation or full experiment coverage."
+  }
+}

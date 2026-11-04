@@ -8,8 +8,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 25748,
-      "sha256": "8491f38e8a99b8c24c232c59cefc1346aca06172b038753538819bb2d3542111"
+      "bytes": 22263,
+      "sha256": "af251f76f4a3e319a3acddb27b3821b4271d1e352ace8a9b43c576ccbe12215a"
     },
     {
       "path": "static/css/gallery.css",
@@ -18,8 +18,8 @@
     },
     {
       "path": "static/css/index.css",
-      "bytes": 28342,
-      "sha256": "3ac4f2704a0433f0c50123f6acf728b28f40d7ee7e3f5b1807b50c171289d17f"
+      "bytes": 26882,
+      "sha256": "80427612ed59b9cdf0c3ae118c54c01a6a319d42a24961d02fe4c4d579759610"
     },
     {
       "path": "static/img/piper/piper_matrix.png",
@@ -42,14 +42,14 @@
       "sha256": "d916001cfae9511447ba88ae422ea73cc528cd28463be80a4df2966eb13c6c35"
     },
     {
-      "path": "static/videos/hero_robots.mp4",
-      "bytes": 95499,
-      "sha256": "d4109c235ede27201063d64fb749186e4fe196a72d73404bf8b0d57fe025ef05"
+      "path": "static/videos/hero_five.mp4",
+      "bytes": 430014,
+      "sha256": "0010edffb355a4af2b0e308d31f91d1966c49b1bf2e4f6e086bd8b6399a759b9"
     },
     {
-      "path": "static/videos/hero_robots_poster.jpg",
-      "bytes": 17496,
-      "sha256": "f0cf377ac9e78f26b4cff4c3f21669908f0b45b46d98cc03880ea45e1723c352"
+      "path": "static/videos/hero_five_poster.jpg",
+      "bytes": 17355,
+      "sha256": "39834d8ba9da16ea262413ec362e90626f20f83ade33d8aeed0b7ebafba777af"
     },
     {
       "path": "static/videos/rollouts/arx5/mug_hang/teacher.jpg",
@@ -293,12 +293,12 @@
   "inventory": {
     "public_file_count_including_manifest": 58,
     "hashed_file_count": 57,
-    "hashed_file_bytes_excluding_manifest": 6183645,
+    "hashed_file_bytes_excluding_manifest": 6513074,
     "media_file_count": 31,
     "video_file_count": 11,
     "image_file_count": 20,
     "animated_gif_count": 6,
-    "media_bytes": 6006601
+    "media_bytes": 6340975
   },
   "verified_deployment_snapshot": {
     "commit": "243bb861ee76caf0695fc070b6572fb19a3a2389",
@@ -344,126 +344,32 @@
     {
       "path": "docs/media/arx5-teacher.gif",
       "bytes": 49645,
-      "sha256": "95e3ec57de48c6bb3bd92b9ede8a5394bc923f2d68dc7914bc3ef5e2652df339",
-      "sources": [
-        {
-          "path": "site/static/videos/rollouts/arx5/mug_hang/teacher.mp4",
-          "sha256": "c8f2f97c85cdbe993f138847b5d7325ed19196ffc287ccb022eb0df5cb7103f3"
-        }
-      ],
-      "encoding": {
-        "fps": 10,
-        "loop": 0,
-        "forward_only": true,
-        "palette": "128 colors, palettegen/paletteuse",
-        "scope": "complete short source clip; duration quantized to 10 fps"
-      }
+      "sha256": "95e3ec57de48c6bb3bd92b9ede8a5394bc923f2d68dc7914bc3ef5e2652df339"
     },
     {
       "path": "docs/media/five-arms.gif",
       "bytes": 326872,
-      "sha256": "fec4cd76a988bd672b4548cfb60dea5d339377794d3802c1c59689c6e3a34a2b",
-      "sources": [
-        {
-          "path": "site/static/videos/rollouts/panda/mug_hang/panda_mug_v7_final.mp4",
-          "sha256": "f83dae8cea1ddb01ceea5cfaa321d722c44b51ac2a6c6422252d8d96dc7eaa39"
-        },
-        {
-          "path": "site/static/videos/rollouts/arx5/mug_hang/teacher.mp4",
-          "sha256": "c8f2f97c85cdbe993f138847b5d7325ed19196ffc287ccb022eb0df5cb7103f3"
-        },
-        {
-          "path": "site/static/videos/rollouts/piper/mug_hang/verified_20261104/teacher_hud.mp4",
-          "sha256": "ee854830ad0d7bfa9a3198bb26a2c12eb2ad53e25597b9c6a631c0f72377c946"
-        },
-        {
-          "path": "site/static/videos/rollouts/ur5e/mug_hang/verified_20261104/teacher_hud.mp4",
-          "sha256": "d8d724f5ff3ef89c6a5b73b4d881c412bb893702f69b77ad28ea92b37f5277f2"
-        },
-        {
-          "path": "site/static/videos/rollouts/xarm7/mug_hang/verified_20261104/teacher_hud.mp4",
-          "sha256": "21ccc8385d50dbdd05c48944ce12f9b40d857d40f66801608f481d179da36c52"
-        }
-      ],
-      "encoding": {
-        "fps": 10,
-        "loop": 0,
-        "forward_only": true,
-        "palette": "128 colors, palettegen/paletteuse",
-        "scope": "six-second independent-loop montage"
-      }
+      "sha256": "fec4cd76a988bd672b4548cfb60dea5d339377794d3802c1c59689c6e3a34a2b"
     },
     {
       "path": "docs/media/panda-dyna.gif",
       "bytes": 211817,
-      "sha256": "977f4743c3fcd3d78633966054da882b194d776528daaff0888fccfbe3ccc07a",
-      "sources": [
-        {
-          "path": "site/static/videos/rollouts/panda/mug_hang/panda_mug_v7_final.mp4",
-          "sha256": "f83dae8cea1ddb01ceea5cfaa321d722c44b51ac2a6c6422252d8d96dc7eaa39"
-        }
-      ],
-      "encoding": {
-        "fps": 10,
-        "loop": 0,
-        "forward_only": true,
-        "palette": "128 colors, palettegen/paletteuse",
-        "scope": "complete short source clip; duration quantized to 10 fps"
-      }
+      "sha256": "977f4743c3fcd3d78633966054da882b194d776528daaff0888fccfbe3ccc07a"
     },
     {
       "path": "docs/media/piper-teacher.gif",
       "bytes": 275649,
-      "sha256": "24bed1462e8ff4196681d4f7fcbbb58165b5f178f8a85079a1b553737d714be4",
-      "sources": [
-        {
-          "path": "site/static/videos/rollouts/piper/mug_hang/verified_20261104/teacher_hud.mp4",
-          "sha256": "ee854830ad0d7bfa9a3198bb26a2c12eb2ad53e25597b9c6a631c0f72377c946"
-        }
-      ],
-      "encoding": {
-        "fps": 10,
-        "loop": 0,
-        "forward_only": true,
-        "palette": "128 colors, palettegen/paletteuse",
-        "scope": "complete short source clip; duration quantized to 10 fps"
-      }
+      "sha256": "24bed1462e8ff4196681d4f7fcbbb58165b5f178f8a85079a1b553737d714be4"
     },
     {
       "path": "docs/media/ur5e-teacher.gif",
       "bytes": 560875,
-      "sha256": "20051b7af09846b2e8b9bee16128212415bfef89b2511121834e9c005c827303",
-      "sources": [
-        {
-          "path": "site/static/videos/rollouts/ur5e/mug_hang/verified_20261104/teacher_hud.mp4",
-          "sha256": "d8d724f5ff3ef89c6a5b73b4d881c412bb893702f69b77ad28ea92b37f5277f2"
-        }
-      ],
-      "encoding": {
-        "fps": 10,
-        "loop": 0,
-        "forward_only": true,
-        "palette": "128 colors, palettegen/paletteuse",
-        "scope": "complete short source clip; duration quantized to 10 fps"
-      }
+      "sha256": "20051b7af09846b2e8b9bee16128212415bfef89b2511121834e9c005c827303"
     },
     {
       "path": "docs/media/xarm7-teacher.gif",
       "bytes": 405423,
-      "sha256": "42887919098286c78e26a35fe0154e0ba67c0d7284204ce0c91b1215f92a92cd",
-      "sources": [
-        {
-          "path": "site/static/videos/rollouts/xarm7/mug_hang/verified_20261104/teacher_hud.mp4",
-          "sha256": "21ccc8385d50dbdd05c48944ce12f9b40d857d40f66801608f481d179da36c52"
-        }
-      ],
-      "encoding": {
-        "fps": 10,
-        "loop": 0,
-        "forward_only": true,
-        "palette": "128 colors, palettegen/paletteuse",
-        "scope": "complete short source clip; duration quantized to 10 fps"
-      }
+      "sha256": "42887919098286c78e26a35fe0154e0ba67c0d7284204ce0c91b1215f92a92cd"
     }
   ]
 }

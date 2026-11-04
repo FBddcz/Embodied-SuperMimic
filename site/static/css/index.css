@@ -476,16 +476,3 @@ details.faq p { margin: 10px 0 2px; font-size:.92rem; color: var(--text-secondar
   .clips-rail { border-right: 0; border-bottom: 1px solid rgba(23,37,84,0.06); }
   #clipList { max-height: 240px; }
 }
-
-/* Additive five-arm strip; original website rules above remain unchanged. */
-.hero-five-wrap { position: relative; z-index: 3; margin: 28px auto 0; }
-.hero-five-strip { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
-.hero-arm { margin: 0; min-width: 0; background: #fff; border: 1px solid #e1e5ed; border-radius: 12px; overflow: hidden; }
-.hero-arm video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #fff; }
-.hero-arm figcaption { display: flex; justify-content: center; align-items: baseline; gap: 7px; padding: 8px 6px; color: #243052; font-size: 13px; }
-.hero-arm figcaption span { color: #64748b; font-size: 11px; }
-.hero-five-caption { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; margin-top: 12px; color: #64748b; font-size: 12px; }
-#heroLoopsToggle { font: inherit; color: #3d5a96; background: #fff; border: 1px solid #d8dce8; border-radius: 6px; padding: 5px 10px; cursor: pointer; }
-#heroLoopsToggle:focus-visible { outline: 3px solid #8da9d5; outline-offset: 3px; }
-@media (max-width: 900px) { .hero-five-strip { grid-template-columns: repeat(5, 190px); overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x proximity; } .hero-arm { scroll-snap-align: start; } }
-@media (max-width: 480px) { .hero-five-wrap { padding-left: 16px; padding-right: 16px; } .hero-five-strip { grid-template-columns: repeat(5, 178px); gap: 10px; } }

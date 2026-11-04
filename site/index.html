@@ -21,10 +21,10 @@
 <header class="hero hero-light">
   <!-- HERO BACKGROUND SWAP: two-line change.
        Option A (current, twilight sky):  <header class="hero">        src=sky_loop.mp4        poster=sky_loop_poster.jpg
-       Option B (robots on white):        <header class="hero hero-light">  src=hero_robots.mp4   poster=hero_robots_poster.jpg
+       Option B (robots on white):        <header class="hero hero-light">  src=hero_five.mp4    poster=hero_five_poster.jpg
        The hero-light class flips text/scrim colours for white footage. -->
-  <video class="hero-video" autoplay muted loop playsinline poster="static/videos/hero_robots_poster.jpg">
-    <source src="static/videos/hero_robots.mp4" type="video/mp4">
+  <video class="hero-video" autoplay muted loop playsinline poster="static/videos/hero_five_poster.jpg">
+    <source src="static/videos/hero_five.mp4" type="video/mp4">
   </video>
   <div class="sky-stars"></div>
   <div class="sky-clouds"></div>
@@ -41,17 +41,6 @@
       <a class="button secondary" href="#film">🎬 Watch the film</a>
       <a class="button secondary" href="#credits">Sources &amp; release status</a>
     </div>
-  </div>
-  <!-- Five-arm showcase: additive; original hero and page layout retained. -->
-  <div class="container-wide hero-five-wrap">
-    <div class="hero-five-strip" aria-label="Five simulated robot arms">
-      <figure class="hero-arm"><video autoplay muted loop playsinline preload="metadata" poster="static/videos/rollouts/panda/mug_hang/panda_mug_v7_final.jpg" aria-label="Panda Dyna selected simulation highlight"><source src="static/videos/rollouts/panda/mug_hang/panda_mug_v7_final.mp4" type="video/mp4"></video><figcaption><strong>Panda</strong><span>Dyna</span></figcaption></figure>
-      <figure class="hero-arm"><video autoplay muted loop playsinline preload="metadata" poster="static/videos/rollouts/arx5/mug_hang/teacher.jpg" aria-label="ARX5 Teacher selected simulation highlight"><source src="static/videos/rollouts/arx5/mug_hang/teacher.mp4" type="video/mp4"></video><figcaption><strong>ARX5</strong><span>Teacher</span></figcaption></figure>
-      <figure class="hero-arm"><video autoplay muted loop playsinline preload="metadata" poster="static/videos/rollouts/piper/mug_hang/verified_20261104/teacher_hud.jpg" aria-label="PiPER Teacher selected simulation highlight"><source src="static/videos/rollouts/piper/mug_hang/verified_20261104/teacher_hud.mp4" type="video/mp4"></video><figcaption><strong>PiPER</strong><span>Teacher</span></figcaption></figure>
-      <figure class="hero-arm"><video autoplay muted loop playsinline preload="metadata" poster="static/videos/rollouts/ur5e/mug_hang/verified_20261104/teacher_hud.jpg" aria-label="UR5e Teacher selected simulation highlight"><source src="static/videos/rollouts/ur5e/mug_hang/verified_20261104/teacher_hud.mp4" type="video/mp4"></video><figcaption><strong>UR5e</strong><span>Teacher</span></figcaption></figure>
-      <figure class="hero-arm"><video autoplay muted loop playsinline preload="metadata" poster="static/videos/rollouts/xarm7/mug_hang/verified_20261104/teacher_hud.jpg" aria-label="xArm7 Teacher selected simulation highlight"><source src="static/videos/rollouts/xarm7/mug_hang/verified_20261104/teacher_hud.mp4" type="video/mp4"></video><figcaption><strong>xArm7</strong><span>Teacher</span></figcaption></figure>
-    </div>
-    <div class="hero-five-caption"><span>Five arms · selected simulation highlights</span><button type="button" id="heroLoopsToggle" aria-label="Pause five robot previews">Pause previews</button></div>
   </div>
 </header>
 
@@ -348,29 +337,6 @@ window.addEventListener('scroll', () => {
 });
 btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-</script>
-
-
-<script>
-// Only the additive five-arm strip; the original gallery controls are unchanged.
-(function () {
-  var previews = Array.from(document.querySelectorAll('.hero-five-strip video'));
-  var toggle = document.getElementById('heroLoopsToggle');
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var paused = reduced.matches;
-  function apply() {
-    previews.forEach(function (video) {
-      video.muted = true; video.defaultMuted = true; video.autoplay = !paused;
-      if (paused) video.pause();
-      else { var promise = video.play(); if (promise && promise.catch) promise.catch(function () {}); }
-    });
-    toggle.textContent = paused ? 'Play previews' : 'Pause previews';
-    toggle.setAttribute('aria-label', paused ? 'Play five robot previews' : 'Pause five robot previews');
-  }
-  toggle.addEventListener('click', function () { paused = !paused; apply(); });
-  if (reduced.addEventListener) reduced.addEventListener('change', function (event) { if (event.matches) { paused = true; apply(); } });
-  apply();
-})();
 </script>
 </body>
 </html>

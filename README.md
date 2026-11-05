@@ -93,7 +93,7 @@ node --check site/static/js/gallery.js
 | UR5e | 62.5% | 68.75% | 69.92% | 1 |
 | xArm7 | 46.5% | 51.95% | 57.81% | 1 |
 
-> **历史四类混合起点评测**（`legacy_reset_v0`，256 集/检查点），非 HOME 全流程分数。预算和训练 seed 分列；教师与 BC 成本另计。<span id="home-live-status"><code>home_fulltask_v1</code> 开发诊断进行中：已审计 5/25 格，5 格通过诊断门槛，5 格完成开发评测，0 格阻塞；开发诊断不等于正式 HOME 成绩。 当前格：<code>panda/lemon</code>。</span>，完整设置见 [实验说明](docs/EXPERIMENTS.md)。
+> **历史四类混合起点评测**（`legacy_reset_v0`，256 集/检查点），非 HOME 全流程分数。预算和训练 seed 分列；教师与 BC 成本另计。<span id="home-live-status"><code>home_fulltask_v1</code> 开发诊断进行中：已审计 6/25 格，6 格通过诊断门槛，6 格完成开发评测，0 格阻塞；开发诊断不等于正式 HOME 成绩。 当前格：<code>arx5/lemon</code>。</span>，完整设置见 [实验说明](docs/EXPERIMENTS.md)。
 
 UR5e / xArm7：初步诊断显示，旧版随机起姿设置影响了表现；后续将采用验证后的安全 HOME 重训，完成后更新成绩。
 

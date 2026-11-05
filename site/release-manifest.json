@@ -9,7 +9,7 @@
     {
       "path": "index.html",
       "bytes": 22467,
-      "sha256": "46f58aa737f2875eca7fce044ec8917aa8bc4904500d9c589e6630a60981f409"
+      "sha256": "013baa95aafbb100c6cf6525d8a82b13ef804c6ecb68fa1598b63918b13681e4"
     },
     {
       "path": "static/css/gallery.css",
@@ -177,7 +177,7 @@
     {
       "path": "README.md",
       "bytes": 8757,
-      "sha256": "d4ac86bb0d202b9e5de5e97ba7a002d40c09d6eadf309af67cbd2e6b104871a1"
+      "sha256": "5fa22135022ad5fa373ab71df61b013900f40e02e6a611dcbeddf180426c05b3"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",

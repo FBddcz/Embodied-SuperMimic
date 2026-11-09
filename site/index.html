@@ -33,7 +33,7 @@
     <h1>Embodied-SuperMimic</h1>
     <p class="subtitle">Online world-model learning for robot manipulation</p>
     <div class="authors">An independent research project maintained by <a href="https://github.com/FBddcz">FBddcz</a></div>
-    <div class="affiliations">Research preview · Updated November 4, 2026 · Simulation only</div>
+    <div class="affiliations">Research preview · Updated November 9, 2026 · Simulation only</div>
 
     <div class="links">
       <span class="button disabled" title="No paper is published for this project yet">Paper · Coming soon</span>
@@ -144,7 +144,7 @@
 <section class="section" id="results">
   <div class="container">
     <h2>What the experiments show</h2><div class="underline"></div>
-    <p class="table-caption">Historical <code>legacy_reset_v0</code> mixes four reset categories. <span id="home-live-status"><code>home_fulltask_v1</code> v5 development audit finished: 25/25 cells audited, 15 diagnostic-ready, 8 development evaluations completed, 10 blocked (drawer/box pending witnesses). A three-run repeat audit found run-to-run variance in some cells; these are development diagnostics, not official HOME scores.</span> <a href="https://github.com/FBddcz/Embodied-SuperMimic/blob/main/docs/EXPERIMENTS.md">Protocol details</a>.</p>
+    <p class="table-caption">Historical <code>legacy_reset_v0</code> mixes four reset categories. <span id="home-live-status"><code>home_fulltask_v1</code> development diagnostics now cover 14 cells on 16-scene sets (five mug_hang, five lemon, four square), with repeat runs where available; these are development diagnostics, not official HOME scores. Fourteen of 25 cells have trained teachers; drawer and box cells remain blocked.</span> <a href="https://github.com/FBddcz/Embodied-SuperMimic/blob/main/docs/EXPERIMENTS.md">Protocol details</a>.</p>
     <p>The strongest controlled comparison so far tests online data collection and model refitting
     against a frozen-world-model control from the same initialization. Both use BPTT.
     The numbers below describe these runs, not a guarantee across every task or robot.</p>
@@ -157,21 +157,42 @@
     </table></div>
     <p class="table-caption">Reported at iteration label 3000, with 256 held-out episodes per checkpoint.
     Values are mean ± standard deviation across training seeds. Teacher pretraining and BC initialization
-    are additional costs. New single-seed robot results are listed in the next table.</p>
+    are additional costs. New single-seed robot results are listed in the embodiments table further down.</p>
+    <h3>HOME full-task development diagnostics</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Task</th><th>Panda</th><th>ARX5</th><th>PiPER</th><th>UR5e</th><th>xArm7</th></tr></thead>
+      <tbody>
+        <tr><td>Mug hanging</td><td>12/16</td><td>7/16</td><td>1/16</td><td>9/16</td><td>7/16*</td></tr>
+        <tr><td>Lemon placement</td><td>15/16</td><td>0/16†</td><td>8/16</td><td>16/16</td><td>16/16*</td></tr>
+        <tr><td>Square insertion</td><td>0/16</td><td>0/16</td><td>Blocked (bank)</td><td>0/16†</td><td>0/16</td></tr>
+      </tbody>
+    </table></div>
+    <p class="table-caption">16-scene development diagnostics on <code>home_fulltask_v1</code> from teacher checkpoints;
+    deterministic policy; native success criteria and time limits unchanged. These are not official frozen HOME scores
+    and not the planned 256/512-scene test. <sup>*</sup> extended 8,000-iteration training: xArm7 mug 1/16 before
+    (15 timeouts); xArm7 lemon 2/16, 4/16 and 3/16 before, 16/16 in three runs after. Panda mug 11/16 and 12/16 across
+    two runs. UR5e lemon repeats 16/16, 16/16 and 15/16. <sup>†</sup> all 16 episodes ended in joint-limit violations,
+    a configuration limitation we report rather than count as task success. Square: after reset-audit fixes, full banks
+    and teachers were completed for four arms (PiPER bank blocked); every HOME development evaluation is 0/16. A rebuilt
+    bank with near-peg/above-peg insertion stages was retrained for 4,000 iterations, but training still only solves the
+    pre-threaded start category (14.6% last-quarter success; other categories near zero) and HOME stays 0/16;
+    reward/curriculum work is the next step. No success criteria were relaxed.</p>
     <div id="mainline-validation">
       <h3>Full matrix, explicit progress</h3>
       <div class="table-wrap"><table>
         <thead><tr><th>Task</th><th>Panda</th><th>ARX5</th><th>PiPER</th><th>UR5e</th><th>xArm7</th></tr></thead>
         <tbody>
-          <tr><td>Mug hanging</td><td>Teacher evaluated</td><td>Teacher evaluated</td><td>Teacher evaluated</td><td>Teacher evaluated</td><td>Teacher evaluated</td></tr>
-          <tr><td>Lemon placement</td><td>Teacher evaluated</td><td>Teacher evaluated</td><td>Teacher evaluated</td><td>Contract passed</td><td>Contract passed</td></tr>
-          <tr><td>Square insertion</td><td>Small bank passed</td><td>Small bank passed</td><td>Pre-grasp check failed</td><td>Small bank passed</td><td>Small bank passed</td></tr>
+          <tr><td>Mug hanging</td><td>Teacher + HOME dev</td><td>Teacher + HOME dev</td><td>Teacher + HOME dev</td><td>Teacher + HOME dev</td><td>Teacher + HOME dev</td></tr>
+          <tr><td>Lemon placement</td><td>Teacher + HOME dev</td><td>Teacher + HOME dev</td><td>Teacher + HOME dev</td><td>Teacher + HOME dev</td><td>Teacher + HOME dev</td></tr>
+          <tr><td>Square insertion</td><td>Teacher + HOME dev 0/16</td><td>Teacher + HOME dev 0/16</td><td>Blocked: pre-grasp sampling</td><td>Teacher + HOME dev 0/16 (joint limits)</td><td>Teacher + HOME dev 0/16</td></tr>
           <tr><td>Drawer (preopened place-and-close)</td><td>IK witness failed</td><td>Small bank passed</td><td>IK witness failed</td><td>Physical sequence failed</td><td>Physical sequence failed</td></tr>
           <tr><td>Box placement</td><td>Sampling insufficient</td><td>Small bank passed</td><td>Sampling insufficient</td><td>Sampling insufficient</td><td>Sampling insufficient</td></tr>
         </tbody>
       </table></div>
-      <p class="table-caption">Snapshot: November 4, 2026. All 25 environment contracts pass; eight cells have formal teacher results.
-      The 15 newly adapted cells have six successful small development-bank probes and nine failures.
+      <p class="table-caption">Snapshot: November 9, 2026. All 25 environment contracts pass; 14 cells now have trained
+      teachers and HOME development diagnostics (five mug_hang, five lemon, four square), while eight cells carry the
+      earlier formal legacy teacher results. The 15 newly adapted cells originally had six development-bank probes pass
+      and nine fail; square banks were later rebuilt with an insertion-stage curriculum and retrained.
       A failed small probe does not prove the task is physically impossible, and a contract pass is not task completion.
       Five-task mixed training within each robot has not started.</p>
     </div>
@@ -226,8 +247,8 @@
   <div class="container">
     <h2>The full 5 × 5 roadmap</h2><div class="underline"></div>
     <div class="grid cols-3">
-      <div class="card"><h3>Single-task experts</h3><p>Panda, ARX5, PiPER, UR5e and xArm7 on mug hanging, lemon placement, square insertion, preopened-drawer place-and-close (not opening), and box placement. Eight of 25 cells currently have formal teacher results.</p></div>
-      <div class="card"><h3>Physical validation</h3><p>All 25 environment contracts pass. Small development banks for the 15 new cells pass in six cases and fail in nine as of November 4. Failures remain visible; a contract check is not task completion.</p></div>
+      <div class="card"><h3>Single-task experts</h3><p>Panda, ARX5, PiPER, UR5e and xArm7 on mug hanging, lemon placement, square insertion, preopened-drawer place-and-close (not opening), and box placement. Fourteen of 25 cells now have trained teachers and HOME development diagnostics; eight carry the earlier formal legacy results.</p></div>
+      <div class="card"><h3>Physical validation</h3><p>All 25 environment contracts pass. Small development banks for the 15 new cells passed in six cases and failed in nine as of November 4; square banks were later rebuilt with insertion-stage curricula and retrained. Failures remain visible; a contract check is not task completion.</p></div>
       <div class="card"><h3>Five tasks within each robot</h3><p>After individual tasks are validated, test a task-conditioned policy and shared world model within each of the five robots. Compare task-wise success, forgetting and matched training budgets. Not yet trained.</p></div>
     </div>
   </div>

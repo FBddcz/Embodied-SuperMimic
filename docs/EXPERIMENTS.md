@@ -1,6 +1,6 @@
 # Evaluation protocols and result boundaries
 
-Snapshot: November 4, 2026. HOME implementation and the website-first release are approved. Implementation is in progress; the HOME protocol is not yet frozen and **no new HOME scores are reported**. All published numeric results remain historical `legacy_reset_v0` results. Earlier start-state interventions are diagnostic observations, not new benchmark scores.
+Snapshot: November 9, 2026. `home_fulltask_v1` development diagnostics are now available for 14 of 25 cells (five mug_hang, five lemon, four square) on 16-scene development sets, with repeat runs where available. The protocol is **not frozen** and these are **not official HOME scores**; the planned 256/512-scene frozen test has not been run. Historical `legacy_reset_v0` results remain unchanged and separately labelled.
 
 ## Historical protocol: legacy_reset_v0
 
@@ -29,10 +29,25 @@ The four-category mean is a **mixed reset-bank score**, not a full-task score. U
 
 `results/mainline.json` retains original counts and recorded evaluation SHA256 values. Those hashes identify private archived source evaluations, not files shipped in this preview; local checks validate the public summary file, not the unavailable raw evaluations. Reported rounded multiseed summaries are not reconstructed into invented per-seed counts.
 
+<a id="home-development-diagnostics"></a>
+## Development diagnostics (November 2026)
+
+Fourteen cells have `home_fulltask_v1` development diagnostics from teacher checkpoints: 16 independently sampled development validation scenes per cell, deterministic policy, no observation noise, native success criteria and time limits unchanged. They are development diagnostics, not official frozen HOME scores, and not the planned 256/512-scene test. Repeated runs are reported where available rather than selecting the best.
+
+| Task | Panda | ARX5 | PiPER | UR5e | xArm7 |
+|---|---|---|---|---|---|
+| mug_hang | 12/16 (11/16 in an earlier run) | 7/16 | 1/16 | 9/16 | 7/16 after 8k training (1/16 before) |
+| lemon | 15/16 | 0/16 (16 joint-limit) | 8/16 (8 joint-limit) | 16/16 (repeats 16/16, 15/16) | 16/16 after 8k (2/16, 4/16, 3/16 before) |
+| square | 0/16 (also 0/16 at 8k and with the v2 bank) | 0/16 | blocked: bank sampling | 0/16 (16 joint-limit) | 0/16 (also 0/16 at 8k) |
+
+- Joint-limit outcomes are configuration limitations, not task success and not evidence of hardware incapability. They stay in the denominator.
+- Square: after reset-audit fixes, full reset banks and teachers were completed for four arms. All HOME development evaluations are 0/16. The original bank lacked the near-peg/above-peg insertion curriculum; a rebuilt bank (`insertion_subtypes`: near_peg / above_peg / threaded, 3,333 each in the partially-inserted category) was collected and retrained for 4,000 iterations. Training still only solves the pre-threaded start category (type-3 last-quarter success 14.6%; type-0/1/2/4 near zero) and HOME remains 0/16. Reward and curriculum changes are the next step; no success criteria were relaxed.
+- Repeats show run-to-run variance in some cells; a single 16-scene diagnostic is not a stable benchmark score.
+
 <a id="home_fulltask_v1"></a>
 ## Approved main evaluation: home_fulltask_v1
 
-**Status: implementation in progress; not frozen; no new HOME scores.** The following is a public design overview, not a claim of implemented software, completed validation or available training commands. The target remains all five robots (Panda, ARX5, PiPER, UR5e, xArm7) across all five tasks.
+**Status: development diagnostics available; not frozen; no official HOME scores.** Fourteen cells have 16-scene development diagnostics (above); the planned 256/512-scene frozen test has not been run. The following is a public design overview, not a claim of completed validation or available training commands. The target remains all five robots (Panda, ARX5, PiPER, UR5e, xArm7) across all five tasks.
 
 ### Starts and task boundaries
 
@@ -80,6 +95,8 @@ Do not pool these protocols or interpret their score difference as an algorithm 
 ## Historical development status
 
 November 4 snapshot: **25/25 environment contracts passed; 8/25 formal teacher cells** (five mug_hang, three lemon). Contracts cover model/action/observation consistency and finite short stepping, not task completion. Among 15 new square/drawer/box cells: six development-bank probes passed, nine failed. These are legacy checks, not new HOME validation.
+
+**November 9 update:** 14/25 cells now have trained teachers and 16-scene HOME development diagnostics (five mug_hang, five lemon, four square); square remains 0/16 across the four arms with completed banks and is a diagnosed open problem (see the diagnostics section). The contract and probe counts below are the preserved November 4 snapshot.
 
 | Task | Panda | ARX5 | PiPER | UR5e | xArm7 |
 |---|---|---|---|---|---|

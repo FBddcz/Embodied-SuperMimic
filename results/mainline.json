@@ -1,10 +1,10 @@
 {
-  "schema": "embodied-supermimic.website-results/2",
-  "snapshot_date": "2026-11-04",
+  "schema": "embodied-supermimic.website-results/3",
+  "snapshot_date": "2026-11-09",
   "formal_teacher_cells": 8,
   "target_teacher_cells": 25,
   "same_robot_five_task_training": "not_started",
-  "note": "All numeric scores are historical legacy_reset_v0 mixed reset-bank results, not HOME full-task scores. Archived evaluation hashes are preserved but raw source files are not bundled. Cross-robot reset distributions and configurations differ.",
+  "note": "Numeric scores are historical legacy_reset_v0 mixed reset-bank results unless listed under home_development, which holds 16-scene HOME full-task development diagnostics from teacher checkpoints. Neither block is an official frozen HOME score. Archived evaluation hashes are preserved but raw source files are not bundled. Cross-robot reset distributions and configurations differ.",
   "evaluations": [
     {
       "robot": "panda",
@@ -651,70 +651,90 @@
       "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
       "teacher_status": "evaluated_legacy",
       "home_validation_status": "not_reported",
-      "readiness_status": "legacy_teacher_evaluated"
+      "readiness_status": "legacy_teacher_evaluated",
+      "home_development_status": "development_16_scene_completed",
+      "home_development_run": "repro_panda_v5_run2"
     },
     "arx5/mug_hang": {
       "contract_status": "passed",
       "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
       "teacher_status": "evaluated_legacy",
       "home_validation_status": "not_reported",
-      "readiness_status": "legacy_teacher_evaluated"
+      "readiness_status": "legacy_teacher_evaluated",
+      "home_development_status": "development_16_scene_completed",
+      "home_development_run": "matrix_smoke_20261105_v5"
     },
     "piper/mug_hang": {
       "contract_status": "passed",
       "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
       "teacher_status": "evaluated_legacy",
       "home_validation_status": "not_reported",
-      "readiness_status": "legacy_teacher_evaluated"
+      "readiness_status": "legacy_teacher_evaluated",
+      "home_development_status": "development_16_scene_completed",
+      "home_development_run": "matrix_smoke_20261105_v5"
     },
     "ur5e/mug_hang": {
       "contract_status": "passed",
       "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
       "teacher_status": "evaluated_legacy",
       "home_validation_status": "not_reported",
-      "readiness_status": "legacy_teacher_evaluated"
+      "readiness_status": "legacy_teacher_evaluated",
+      "home_development_status": "development_16_scene_completed",
+      "home_development_run": "matrix_smoke_20261105_v5"
     },
     "xarm7/mug_hang": {
       "contract_status": "passed",
       "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
       "teacher_status": "evaluated_legacy",
       "home_validation_status": "not_reported",
-      "readiness_status": "legacy_teacher_evaluated"
+      "readiness_status": "legacy_teacher_evaluated",
+      "home_development_status": "development_16_scene_completed",
+      "home_development_run": "teacher_xarm7_mug_ext8000_v5"
     },
     "panda/lemon": {
       "contract_status": "passed",
       "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
       "teacher_status": "evaluated_legacy",
       "home_validation_status": "not_reported",
-      "readiness_status": "legacy_teacher_evaluated"
+      "readiness_status": "legacy_teacher_evaluated",
+      "home_development_status": "development_16_scene_completed",
+      "home_development_run": "matrix_smoke_20261105_v5"
     },
     "arx5/lemon": {
       "contract_status": "passed",
       "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
       "teacher_status": "evaluated_legacy",
       "home_validation_status": "not_reported",
-      "readiness_status": "legacy_teacher_evaluated"
+      "readiness_status": "legacy_teacher_evaluated",
+      "home_development_status": "development_16_scene_completed",
+      "home_development_run": "matrix_smoke_20261105_v5"
     },
     "piper/lemon": {
       "contract_status": "passed",
       "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
       "teacher_status": "evaluated_legacy",
       "home_validation_status": "not_reported",
-      "readiness_status": "legacy_teacher_evaluated"
+      "readiness_status": "legacy_teacher_evaluated",
+      "home_development_status": "development_16_scene_completed",
+      "home_development_run": "matrix_smoke_20261105_v5"
     },
     "ur5e/lemon": {
       "contract_status": "passed",
       "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
       "teacher_status": "not_completed",
       "home_validation_status": "not_reported",
-      "readiness_status": "contract_only"
+      "readiness_status": "contract_only",
+      "home_development_status": "development_16_scene_completed",
+      "home_development_run": "teacher_ur5e_lemon_v5"
     },
     "xarm7/lemon": {
       "contract_status": "passed",
       "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
       "teacher_status": "not_completed",
       "home_validation_status": "not_reported",
-      "readiness_status": "contract_only"
+      "readiness_status": "contract_only",
+      "home_development_status": "development_16_scene_completed",
+      "home_development_run": "teacher_xarm7_lemon_ext8000_v5"
     },
     "panda/square": {
       "contract_status": "passed",
@@ -723,7 +743,9 @@
       "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
       "teacher_status": "not_completed",
       "home_validation_status": "not_reported",
-      "readiness_status": "development_probe_passed_only"
+      "readiness_status": "development_probe_passed_only",
+      "home_development_status": "development_16_scene_completed",
+      "home_development_run": "teacher_panda_square_v5"
     },
     "arx5/square": {
       "contract_status": "passed",
@@ -732,7 +754,9 @@
       "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
       "teacher_status": "not_completed",
       "home_validation_status": "not_reported",
-      "readiness_status": "development_probe_passed_only"
+      "readiness_status": "development_probe_passed_only",
+      "home_development_status": "development_16_scene_completed",
+      "home_development_run": "teacher_arx5_square_v5"
     },
     "piper/square": {
       "contract_status": "passed",
@@ -751,7 +775,9 @@
       "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
       "teacher_status": "not_completed",
       "home_validation_status": "not_reported",
-      "readiness_status": "development_probe_passed_only"
+      "readiness_status": "development_probe_passed_only",
+      "home_development_status": "development_16_scene_completed",
+      "home_development_run": "teacher_ur5e_square_v5"
     },
     "xarm7/square": {
       "contract_status": "passed",
@@ -760,7 +786,9 @@
       "validation_scope": "historical_environment_and_legacy_bank_checks_not_HOME",
       "teacher_status": "not_completed",
       "home_validation_status": "not_reported",
-      "readiness_status": "development_probe_passed_only"
+      "readiness_status": "development_probe_passed_only",
+      "home_development_status": "development_16_scene_completed",
+      "home_development_run": "teacher_xarm7_square_v5"
     },
     "panda/drawer": {
       "contract_status": "passed",
@@ -876,9 +904,9 @@
     },
     "home_fulltask_v1": {
       "authorization_status": "approved",
-      "implementation_status": "in_progress",
+      "implementation_status": "development_diagnostics_available",
       "frozen": false,
-      "result_status": "no_new_home_scores",
+      "result_status": "development_diagnostics_only",
       "evaluations": [],
       "planned_design": {
         "final_scenes_per_cell_per_training_seed": 512,
@@ -892,7 +920,8 @@
       "start_definition": "Predeclared validated robot/task HOME independent of randomized scene; open empty gripper; no pre-grasp placement, teacher takeover or intermediate reset.",
       "drawer_scope": "Place and close from a drawer preopened to 0.13 m; no opening action; process prefix reset to zero.",
       "success_definition": "Preserve native criteria and time limits; all preregistered episodes remain in the denominator; failures and incomplete batches are explicit.",
-      "safety_scope": "Validated simulated start only, not full-path safety or real-robot certification."
+      "safety_scope": "Validated simulated start only, not full-path safety or real-robot certification.",
+      "development_diagnostics": "14 cells evaluated on 16-scene development sets with teacher checkpoints; deterministic policy; native success criteria and time limits unchanged; not an official frozen HOME score and not the planned 256/512-scene test."
     },
     "home_jitter_v1": {
       "status": "planned_separate_appendix",
@@ -957,6 +986,341 @@
     "new_development_bank_probes": 15,
     "development_bank_probes_passed": 6,
     "development_bank_probes_failed": 9,
-    "note": "Historical snapshot, not completed HOME validation or full experiment coverage."
+    "note": "Historical contract snapshot plus November 2026 HOME development diagnostics; not official HOME scores or full experiment coverage.",
+    "home_development_cells": 14,
+    "home_development_scenes_per_cell": 16,
+    "home_development_breakdown": {
+      "mug_hang": 5,
+      "lemon": 5,
+      "square": 4
+    }
+  },
+  "trained_teacher_cells": 14,
+  "trained_teacher_breakdown": {
+    "mug_hang": 5,
+    "lemon": 5,
+    "square": 4,
+    "drawer": 0,
+    "box_in_bin": 0
+  },
+  "development_validation_snapshot_date": "2026-11-04",
+  "home_development": {
+    "protocol_id": "home_fulltask_v1",
+    "status": "development_diagnostics",
+    "scenes_per_cell": 16,
+    "policy_mode": "deterministic",
+    "observation_noise": false,
+    "scene_source": "independent_scene_sampling",
+    "note": "Each cell uses 16 development validation scenes from an independently sampled validation set. These are development diagnostics from teacher checkpoints, not official frozen HOME scores; native success criteria were not changed. Repeats are listed where available.",
+    "evaluations": [
+      {
+        "id": "panda/mug_hang",
+        "robot": "panda",
+        "task": "mug_hang",
+        "run": "repro_panda_v5_run2",
+        "checkpoint": "teacher",
+        "scenes": 16,
+        "episodes": 16,
+        "successes": 12,
+        "outcomes": {
+          "success": 12,
+          "timeout": 4
+        },
+        "repeats": [
+          {
+            "run": "matrix_smoke_20261105_v5",
+            "episodes": 16,
+            "successes": 11,
+            "outcomes": {
+              "success": 11,
+              "timeout": 5
+            }
+          }
+        ]
+      },
+      {
+        "id": "arx5/mug_hang",
+        "robot": "arx5",
+        "task": "mug_hang",
+        "run": "matrix_smoke_20261105_v5",
+        "checkpoint": "teacher",
+        "scenes": 16,
+        "episodes": 16,
+        "successes": 7,
+        "outcomes": {
+          "success": 7,
+          "joint_limit_violation": 9
+        }
+      },
+      {
+        "id": "piper/mug_hang",
+        "robot": "piper",
+        "task": "mug_hang",
+        "run": "matrix_smoke_20261105_v5",
+        "checkpoint": "teacher",
+        "scenes": 16,
+        "episodes": 16,
+        "successes": 1,
+        "outcomes": {
+          "success": 1,
+          "timeout": 7,
+          "joint_limit_violation": 8
+        }
+      },
+      {
+        "id": "ur5e/mug_hang",
+        "robot": "ur5e",
+        "task": "mug_hang",
+        "run": "matrix_smoke_20261105_v5",
+        "checkpoint": "teacher",
+        "scenes": 16,
+        "episodes": 16,
+        "successes": 9,
+        "outcomes": {
+          "success": 9,
+          "timeout": 7
+        }
+      },
+      {
+        "id": "xarm7/mug_hang",
+        "robot": "xarm7",
+        "task": "mug_hang",
+        "run": "teacher_xarm7_mug_ext8000_v5",
+        "checkpoint": "teacher",
+        "scenes": 16,
+        "episodes": 16,
+        "successes": 7,
+        "outcomes": {
+          "success": 7,
+          "timeout": 9
+        },
+        "repeats": [
+          {
+            "run": "matrix_smoke_20261105_v5",
+            "episodes": 16,
+            "successes": 1,
+            "outcomes": {
+              "success": 1,
+              "timeout": 15
+            }
+          }
+        ]
+      },
+      {
+        "id": "panda/lemon",
+        "robot": "panda",
+        "task": "lemon",
+        "run": "matrix_smoke_20261105_v5",
+        "checkpoint": "teacher",
+        "scenes": 16,
+        "episodes": 16,
+        "successes": 15,
+        "outcomes": {
+          "success": 15,
+          "timeout": 1
+        }
+      },
+      {
+        "id": "arx5/lemon",
+        "robot": "arx5",
+        "task": "lemon",
+        "run": "matrix_smoke_20261105_v5",
+        "checkpoint": "teacher",
+        "scenes": 16,
+        "episodes": 16,
+        "successes": 0,
+        "outcomes": {
+          "joint_limit_violation": 16
+        }
+      },
+      {
+        "id": "piper/lemon",
+        "robot": "piper",
+        "task": "lemon",
+        "run": "matrix_smoke_20261105_v5",
+        "checkpoint": "teacher",
+        "scenes": 16,
+        "episodes": 16,
+        "successes": 8,
+        "outcomes": {
+          "success": 8,
+          "joint_limit_violation": 8
+        }
+      },
+      {
+        "id": "ur5e/lemon",
+        "robot": "ur5e",
+        "task": "lemon",
+        "run": "teacher_ur5e_lemon_v5",
+        "checkpoint": "teacher",
+        "scenes": 16,
+        "episodes": 16,
+        "successes": 16,
+        "outcomes": {
+          "success": 16
+        },
+        "repeats": [
+          {
+            "run": "teacher_ur5e_lemon_v5 r2",
+            "episodes": 16,
+            "successes": 16,
+            "outcomes": {
+              "success": 16
+            }
+          },
+          {
+            "run": "teacher_ur5e_lemon_v5 r3",
+            "episodes": 16,
+            "successes": 15,
+            "outcomes": {
+              "success": 15,
+              "timeout": 1
+            }
+          }
+        ]
+      },
+      {
+        "id": "xarm7/lemon",
+        "robot": "xarm7",
+        "task": "lemon",
+        "run": "teacher_xarm7_lemon_ext8000_v5",
+        "checkpoint": "teacher",
+        "scenes": 16,
+        "episodes": 16,
+        "successes": 16,
+        "outcomes": {
+          "success": 16
+        },
+        "repeats": [
+          {
+            "run": "teacher_xarm7_lemon_v5",
+            "episodes": 16,
+            "successes": 2,
+            "outcomes": {
+              "success": 2,
+              "timeout": 14
+            }
+          },
+          {
+            "run": "teacher_xarm7_lemon_v5 r2",
+            "episodes": 16,
+            "successes": 4,
+            "outcomes": {
+              "success": 4,
+              "timeout": 12
+            }
+          },
+          {
+            "run": "teacher_xarm7_lemon_v5 r3",
+            "episodes": 16,
+            "successes": 3,
+            "outcomes": {
+              "success": 3,
+              "timeout": 13
+            }
+          },
+          {
+            "run": "teacher_xarm7_lemon_ext8000_v5 r2",
+            "episodes": 16,
+            "successes": 16,
+            "outcomes": {
+              "success": 16
+            }
+          },
+          {
+            "run": "teacher_xarm7_lemon_ext8000_v5 r3",
+            "episodes": 16,
+            "successes": 16,
+            "outcomes": {
+              "success": 16
+            }
+          }
+        ],
+        "note": "2-4/16 before extended 8000-iteration training; 16/16 in three runs after."
+      },
+      {
+        "id": "panda/square",
+        "robot": "panda",
+        "task": "square",
+        "run": "teacher_panda_square_v5",
+        "checkpoint": "teacher",
+        "scenes": 16,
+        "episodes": 16,
+        "successes": 0,
+        "outcomes": {
+          "timeout": 16
+        },
+        "repeats": [
+          {
+            "run": "teacher_panda_square_v5_ext8000",
+            "episodes": 16,
+            "successes": 0,
+            "outcomes": {
+              "timeout": 16
+            }
+          },
+          {
+            "run": "teacher_panda_square_v2_4k",
+            "episodes": 16,
+            "successes": 0,
+            "outcomes": {
+              "timeout": 14,
+              "joint_limit_violation": 2
+            }
+          }
+        ],
+        "note": "Also 0/16 with the rebuilt insertion-stage v2 bank at 4000 iterations."
+      },
+      {
+        "id": "arx5/square",
+        "robot": "arx5",
+        "task": "square",
+        "run": "teacher_arx5_square_v5",
+        "checkpoint": "teacher",
+        "scenes": 16,
+        "episodes": 16,
+        "successes": 0,
+        "outcomes": {
+          "timeout": 16
+        }
+      },
+      {
+        "id": "ur5e/square",
+        "robot": "ur5e",
+        "task": "square",
+        "run": "teacher_ur5e_square_v5",
+        "checkpoint": "teacher",
+        "scenes": 16,
+        "episodes": 16,
+        "successes": 0,
+        "outcomes": {
+          "joint_limit_violation": 16
+        }
+      },
+      {
+        "id": "xarm7/square",
+        "robot": "xarm7",
+        "task": "square",
+        "run": "teacher_xarm7_square_v5",
+        "checkpoint": "teacher",
+        "scenes": 16,
+        "episodes": 16,
+        "successes": 0,
+        "outcomes": {
+          "timeout": 16
+        },
+        "repeats": [
+          {
+            "run": "teacher_xarm7_square_v5_ext8000",
+            "episodes": 16,
+            "successes": 0,
+            "outcomes": {
+              "timeout": 16
+            }
+          }
+        ]
+      }
+    ],
+    "square_diagnosis": "After reset-audit fixes, full square reset banks and teachers were completed for Panda, ARX5, UR5e and xArm7. All HOME development evaluations remain 0/16. The original bank lacked the near-peg/above-peg insertion curriculum; a rebuilt bank (insertion_subtypes: near_peg/above_peg/threaded) was collected and retrained for 4000 iterations. Training still only solves the pre-threaded start category (type-3 last-quarter success 14.6%; type-0/1/2/4 near zero) and HOME remains 0/16. Reward/curriculum changes are the next step; no success criteria were relaxed."
   }
 }

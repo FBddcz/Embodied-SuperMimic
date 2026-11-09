@@ -90,7 +90,8 @@ def check_results():
     home = data['protocols']['home_fulltask_v1']
     if (home['authorization_status'], home['implementation_status'], home['frozen'],
             home['result_status'], home['evaluations']) != (
-            'approved', 'in_progress', False, 'no_new_home_scores', []):
+            'approved', 'development_diagnostics_available', False,
+            'development_diagnostics_only', []):
         raise ValueError('HOME status changed: review protocol, evidence and checker together')
     for entry in data['evaluations']:
         if entry['protocol_id'] != 'legacy_reset_v0' or entry['metric_scope'] != 'mixed_reset_bank':
@@ -116,6 +117,30 @@ def check_results():
         raise ValueError('Development pass count mismatch')
     if sum(v.get('readiness_status') == 'blocked' for v in cells.values()) != 9:
         raise ValueError('Blocked development count mismatch')
+    development = data['home_development']
+    if (development['protocol_id'] != 'home_fulltask_v1'
+            or development['status'] != 'development_diagnostics'
+            or development['scenes_per_cell'] != 16):
+        raise ValueError('HOME development block changed')
+    robots = {'panda', 'arx5', 'piper', 'ur5e', 'xarm7'}
+    tasks = {'mug_hang', 'lemon', 'square'}
+    seen = set()
+    for entry in development['evaluations']:
+        key = (entry['robot'], entry['task'])
+        if key in seen or entry['robot'] not in robots or entry['task'] not in tasks:
+            raise ValueError('Invalid HOME development cell: ' + str(key))
+        seen.add(key)
+        for row in [entry, *entry.get('repeats', [])]:
+            if row['episodes'] != development['scenes_per_cell']:
+                raise ValueError('HOME development episode count mismatch: ' + str(key))
+            if not 0 <= row['successes'] <= row['episodes']:
+                raise ValueError('Invalid HOME development success count: ' + str(key))
+            if sum(row['outcomes'].values()) != row['episodes']:
+                raise ValueError('HOME development outcome total mismatch: ' + str(key))
+            if set(row['outcomes']) - {'success', 'timeout', 'joint_limit_violation', 'protocol_defect'}:
+                raise ValueError('Unknown HOME development outcome: ' + str(key))
+    if len(seen) != 14:
+        raise ValueError('HOME development cell count changed')
 
 
 def main():
@@ -216,7 +241,7 @@ def main():
         raise ValueError('Manifest inventory totals are stale')
     if manifest['protocol_status'] != {
             'numeric_results': 'legacy_reset_v0',
-            'home_fulltask_v1': 'approved_implementation_in_progress_not_frozen_no_new_scores',
+            'home_fulltask_v1': 'approved_development_diagnostics_available_not_frozen_no_official_scores',
             'home_jitter_v1': 'planned_no_scores'}:
         raise ValueError('Manifest protocol metadata disagrees with the result snapshot')
     print(f'OK: {len(actual)} public files; {clips} gallery entries; {len(media)} media files ({sum(p.stat().st_size for p in media)} bytes).')

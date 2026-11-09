@@ -1,5 +1,5 @@
 {
-  "release": "research-preview-2026-11-04-original-hero5",
+  "release": "research-preview-2026-11-09-home-development-diagnostics",
   "assets": [
     {
       "path": ".nojekyll",
@@ -8,8 +8,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 22523,
-      "sha256": "2d3bb9c513760440d349a40a3927cb6ed9aace84dd942ae564d6d19dc31e4da9"
+      "bytes": 24713,
+      "sha256": "53269c2e0bca44b29f9dd8f85704e851e1ae794d2eb2db2278b085973d8ca5dc"
     },
     {
       "path": "static/css/gallery.css",
@@ -176,8 +176,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8795,
-      "sha256": "b4eb5f4aa03acb87509eeff3b46596b85ac298e4f857ba09522c33c0f2b7b0af"
+      "bytes": 10207,
+      "sha256": "48e23a7ccfdeb8c22e6c6e8a6ed3fa072699c97640564da5f6895a3d7f61b591"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -186,8 +186,8 @@
     },
     {
       "path": "docs/EXPERIMENTS.md",
-      "bytes": 11985,
-      "sha256": "7a5d4dc915f38ead4dd71b053dc566eea8d6c48ed076eda91460fa8f6dc0c1bf"
+      "bytes": 14332,
+      "sha256": "4e5ebd4b9bdd7a841f393d157ab239b6025536d17a00b6799de3aed89ed99462"
     },
     {
       "path": "docs/QUICKSTART.md",
@@ -196,8 +196,8 @@
     },
     {
       "path": "docs/RELEASE_STATUS.md",
-      "bytes": 4873,
-      "sha256": "93f33a55a6f1f0a855d7f17ab0b865790c95ce3b6b5d49a6db127e62046b5ae8"
+      "bytes": 5664,
+      "sha256": "871963884721222cd3a9ceda0eb21759e16e400b94237e8e6dcffdca41361aee"
     },
     {
       "path": "docs/REPRODUCIBILITY.md",
@@ -241,13 +241,13 @@
     },
     {
       "path": "results/mainline.json",
-      "bytes": 30933,
-      "sha256": "480c7f90012c146273a11d10094bd13dcb065fa064a5168a2dd48e21baaf57b0"
+      "bytes": 42139,
+      "sha256": "7112f28abac10cabe64b3d4b8f337559ec7c4e40e5acc4378039e9850a1ca094"
     },
     {
       "path": "scripts/check_site.py",
-      "bytes": 11180,
-      "sha256": "0cc6e32f8f06b85e94f030b39419e3048b12d50eadb6b3b8e6c2827e39de6922"
+      "bytes": 12696,
+      "sha256": "ddef759f684ef739e96999eefebb676624b7048bd6a050edfbe9867aab072d15"
     },
     {
       "path": "scripts/serve.py",
@@ -263,10 +263,10 @@
   "hash_scope": "All public files except this manifest; assets relative to site, public_metadata and readme_media relative to repository root. README GIF source hashes identify unchanged approved MP4s.",
   "protocol_status": {
     "numeric_results": "legacy_reset_v0",
-    "home_fulltask_v1": "approved_implementation_in_progress_not_frozen_no_new_scores",
+    "home_fulltask_v1": "approved_development_diagnostics_available_not_frozen_no_official_scores",
     "home_jitter_v1": "planned_no_scores"
   },
-  "publication_status": "deployed_prior_snapshot_restoration_pending_publication",
+  "publication_status": "pending_publication_of_2026_11_09_update",
   "media_scope": "Existing project-generated noncommercial simulation illustrations; not redistributed reference-project videos or raw models. Third-party rights are not relicensed under MIT; see THIRD_PARTY_NOTICES.md.",
   "media_timing": {
     "legacy_montages": [
@@ -293,7 +293,7 @@
   "inventory": {
     "public_file_count_including_manifest": 58,
     "hashed_file_count": 57,
-    "hashed_file_bytes_excluding_manifest": 6513603,
+    "hashed_file_bytes_excluding_manifest": 6533065,
     "media_file_count": 31,
     "video_file_count": 11,
     "image_file_count": 20,
@@ -326,7 +326,7 @@
       "hash_scope": "External service image; excluded from local hashes and inventory"
     },
     {
-      "url": "https://img.shields.io/badge/LIVE_DEMO-打开实验展示-1f5bc4?style=for-the-badge",
+      "url": "https://img.shields.io/badge/LIVE_DEMO-\u6253\u5f00\u5b9e\u9a8c\u5c55\u793a-1f5bc4?style=for-the-badge",
       "purpose": "Live Demo navigation badge",
       "hash_scope": "External service image; excluded from local hashes and inventory"
     },

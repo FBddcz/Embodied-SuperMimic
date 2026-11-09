@@ -93,9 +93,19 @@ node --check site/static/js/gallery.js
 | UR5e | 62.5% | 68.75% | 69.92% | 1 |
 | xArm7 | 46.5% | 51.95% | 57.81% | 1 |
 
-> **历史四类混合起点评测**（`legacy_reset_v0`，256 集/检查点），非 HOME 全流程分数。预算和训练 seed 分列；教师与 BC 成本另计。<span id="home-live-status"><code>home_fulltask_v1</code> v5 开发审计已完成：25/25 格审计，15 格通过诊断，8 格完成开发评测，10 格 blocked（drawer/box 待独立见证）；三次重复评测发现部分格存在运行方差，开发诊断不等于正式 HOME 成绩。</span>，完整设置见 [实验说明](docs/EXPERIMENTS.md)。
+> **历史四类混合起点评测**（`legacy_reset_v0`，256 集/检查点），非 HOME 全流程分数。预算和训练 seed 分列；教师与 BC 成本另计。<span id="home-live-status"><code>home_fulltask_v1</code> 开发诊断已覆盖 14 格（mug_hang 5、lemon 5、square 4），每格 16 个独立场景并带重复评测；开发诊断不等于正式 HOME 成绩。25 格中已有 14 格训练出教师，drawer/box 仍 blocked。</span>，完整设置见 [实验说明](docs/EXPERIMENTS.md)。
 
-UR5e / xArm7：初步诊断显示，旧版随机起姿设置影响了表现；后续将采用验证后的安全 HOME 重训，完成后更新成绩。
+**HOME 全流程开发诊断**（`home_fulltask_v1`，16 场景/格，教师 checkpoint，确定性策略；成功判据与时限未放宽，非官方 HOME 成绩）：
+
+| 任务 | Panda | ARX5 | PiPER | UR5e | xArm7 |
+|---|---|---|---|---|---|
+| 挂杯 | 12/16 | 7/16 | 1/16 | 9/16 | 7/16* |
+| 柠檬 | 15/16 | 0/16† | 8/16 | 16/16 | 16/16* |
+| 方螺母插入 | 0/16 | 0/16 | blocked（采样） | 0/16† | 0/16 |
+
+> *xArm7 延训到 8000 iter 后：挂杯从 1/16 到 7/16；柠檬从 2/4/3/16 到 16/16×3。Panda 挂杯两次为 11/16、12/16；UR5e 柠檬三次为 16/16、16/16、15/16。†整格 16 回合均为 joint-limit violation，属配置限制，如实计入分母、不算成功。**Square**：reset-audit 修复后 Panda/ARX5/UR5e/xArm7 的全量 bank 与教师均完成，但 HOME 开发诊断全为 0/16；补采 near-peg/above-peg 插入阶段课程（v2 bank）并重训 4000 iter 后，训练仍只学会"已穿入"起点（type-3 末段 14.6%，其余类别≈0），HOME 仍 0/16——这是已定位的开放问题，奖励/课程是下一步，未降低成功判据。
+
+UR5e / xArm7：HOME 开发诊断已在上表给出；两臂部分格出现 joint-limit 骑限，属配置限制并如实计入分母；旧版随机起姿评测结果保留在历史表中。
 
 <details>
 <summary>🔎 计数、控制组与完整 25 格状态</summary>
@@ -105,7 +115,8 @@ UR5e / xArm7：初步诊断显示，旧版随机起姿设置影响了表现；�
 - 录像保留 Teacher / BC / Dyna 标签。所选成功片段不代替整体评测；部分旧片为中途起点，三条长片按真实控制时间播放，其余标为 legacy capture。蓝色残影为历史姿态。
 - 最终 legacy 广范围随机 type-0：UR5e 0/64、xArm7 1/64；不能据此推断硬件上限。
 - 同初始化冻结模型控制：Panda 38.4 ± 7.9%（3 seed）；ARX5 39.8 ± 12.7%（2 个完成、1 个发散）。
-- **5 本体 × 5 任务是目标**：正式历史教师 8/25；环境契约 25/25 不等于任务完成。新增开发库 6 通过、9 阻塞，未完成项不写成 0%。
+- **5 本体 × 5 任务是目标**：正式历史教师 8/25；现已训练教师 14/25（mug 5、lemon 5、square 4）；HOME 开发诊断 14 格完成。环境契约 25/25 不等于任务完成。新增开发库 6 通过、9 阻塞，未完成项不写成 0%。
+- Square 的 bank 在 reset-audit 修复后四臂采满并完成教师；插入阶段 v2 bank 修复了课程缺口，但 4000 iter 仍只学会已穿入起点，HOME 0/16，列为开放问题。
 - 任务为挂杯、柠檬放置、方螺母插入、预打开抽屉的放物并关抽屉、盒子入箱。drawer **不含开抽屉**。
 
 [完整协议与逐格状态](docs/EXPERIMENTS.md) · [机器可读结果](results/mainline.json) · [新 HOME 协议概要](docs/EXPERIMENTS.md#home_fulltask_v1)

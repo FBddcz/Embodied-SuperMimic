@@ -196,8 +196,8 @@
     },
     {
       "path": "docs/RELEASE_STATUS.md",
-      "bytes": 5664,
-      "sha256": "871963884721222cd3a9ceda0eb21759e16e400b94237e8e6dcffdca41361aee"
+      "bytes": 5719,
+      "sha256": "168b5ea493421e8d0fdee6dcb76a85f6da8fa537e7ab1288e7081f69df4c93e2"
     },
     {
       "path": "docs/REPRODUCIBILITY.md",
@@ -266,7 +266,7 @@
     "home_fulltask_v1": "approved_development_diagnostics_available_not_frozen_no_official_scores",
     "home_jitter_v1": "planned_no_scores"
   },
-  "publication_status": "pending_publication_of_2026_11_09_update",
+  "publication_status": "deployed_2026_11_09_update_visible_live",
   "media_scope": "Existing project-generated noncommercial simulation illustrations; not redistributed reference-project videos or raw models. Third-party rights are not relicensed under MIT; see THIRD_PARTY_NOTICES.md.",
   "media_timing": {
     "legacy_montages": [
@@ -293,7 +293,7 @@
   "inventory": {
     "public_file_count_including_manifest": 58,
     "hashed_file_count": 57,
-    "hashed_file_bytes_excluding_manifest": 6533065,
+    "hashed_file_bytes_excluding_manifest": 6533120,
     "media_file_count": 31,
     "video_file_count": 11,
     "image_file_count": 20,
@@ -301,17 +301,17 @@
     "media_bytes": 6340975
   },
   "verified_deployment_snapshot": {
-    "commit": "243bb861ee76caf0695fc070b6572fb19a3a2389",
+    "commit": "437fd44734cefad304116a766ea74f3709070068",
     "url": "https://fbddcz.github.io/Embodied-SuperMimic/",
     "checked_by": "release_owner",
     "verified": [
       "HTTPS index",
       "CSS and JS",
-      "three real-time teacher video hashes",
-      "HTTP Range 206"
+      "hero video with HTTP Range 206",
+      "HOME development-diagnostics tables present in served HTML"
     ],
-    "browser_interaction": "not_verified",
-    "current_local_update": "Prior reader-first site redesign superseded; original-layout restoration with five-arm hero and README GIFs pending publication verification."
+    "browser_interaction": "not_verified_in_app_browser_unavailable",
+    "current_local_update": "November 9 HOME development diagnostics and square status; deployed and verified live."
   },
   "external_resources": [
     {

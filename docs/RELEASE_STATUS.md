@@ -1,6 +1,6 @@
 # Release status
 
-Snapshot: November 9, 2026. **Website-only research preview; this snapshot is pending publication verification.** The last verified deployment was commit `243bb861ee76caf0695fc070b6572fb19a3a2389` at https://fbddcz.github.io/Embodied-SuperMimic/ : HTTPS index, CSS/JS, the three long-video hashes and HTTP Range 206. Browser interaction and mobile layout were not verified because the preview safety classifier was unavailable.
+Snapshot: November 9, 2026. **Website-only research preview, deployed to GitHub Pages.** This update was verified live at commit `437fd44734cefad304116a766ea74f3709070068` at https://fbddcz.github.io/Embodied-SuperMimic/ : HTTPS index, CSS/JS, hero video with HTTP Range 206, and the new HOME development-diagnostics tables present in the served HTML. Browser interaction and mobile layout were not re-verified because the in-app Browser preview was unavailable in this environment.
 
 The prior reader-first website redesign is superseded. This restoration preserves the established English layout, fonts, title, buttons and gallery, adding only a five-arm hero strip and factual labels. The Chinese README retains its reader-first structure and adds looping GIF derivatives. This snapshot adds 16-scene HOME development diagnostics and the square status while leaving original media unchanged. It requires its own publication verification. No project paper or full algorithm package is published.
 
